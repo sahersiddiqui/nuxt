@@ -3,8 +3,8 @@
     <el-container>
       <el-header>
         <el-menu mode="horizontal" class="menu-nav">
-          <el-menu-item index="1">Home</el-menu-item>
-          <el-menu-item index="3">About</el-menu-item>
+          <el-menu-item index="/">Home</el-menu-item>
+          <el-menu-item index="/user">About</el-menu-item>
           <el-menu-item index="4">Contact Us</el-menu-item>
         </el-menu>
       </el-header>

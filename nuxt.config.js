@@ -37,6 +37,7 @@ module.exports = {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    // '@nuxt/typescript-build'
   ],
   /*
   ** Nuxt.js modules
@@ -53,5 +54,11 @@ module.exports = {
     */
     extend(config, ctx) {
     }
+  },
+  /**
+   * router middleware
+   */
+  router: {
+    middleware: 'route'
   }
 }

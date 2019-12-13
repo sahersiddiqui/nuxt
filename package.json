@@ -19,6 +19,7 @@
     "sass-loader": "^8.0.0"
   },
   "devDependencies": {
+    "@nuxt/typescript-build": "^0.5.1",
     "nodemon": "^1.18.9"
   }
 }
