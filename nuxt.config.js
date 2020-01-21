@@ -23,15 +23,12 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    // 'element-ui/lib/theme-chalk/index.css',
-    '@/assets/css/element-variables.scss',
-    '@/assets/css/main.scss',
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/material-ui.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -60,5 +57,8 @@ module.exports = {
    */
   router: {
     middleware: 'route'
+  },
+  server: {
+    port: 3001
   }
-}
+} 

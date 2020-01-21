@@ -1,18 +1,20 @@
 <template>
-  <div>
-    <el-container>
-      <el-header>
-        <el-menu mode="horizontal" class="menu-nav">
-          <el-menu-item index="/">Home</el-menu-item>
-          <el-menu-item index="/user">About</el-menu-item>
-          <el-menu-item index="4">Contact Us</el-menu-item>
-        </el-menu>
-      </el-header>
-      <el-main>
-        <nuxt />
-      </el-main>
-      <el-footer>Copyright @ 2019</el-footer>
-    </el-container>
-  </div>
+<div>
+    <header>
+        <div class="md-layout">
+            <div class="md-layout-item">
+                <md-tabs>
+                    <md-tab id="tab-home" md-label="Home" to="/" ></md-tab>
+                    <md-tab id="tab-pages" md-label="Contact Us" to="/contact"></md-tab>
+                </md-tabs>
+            </div>
+        </div>
+    </header>
+    <section>
+        <nuxt/>
+    </section>
+    <footer>
+        @Copy 2020
+    </footer>
+</div>
 </template>
-<style lang="scss" src="~/assets/css/main.scss"></style>
