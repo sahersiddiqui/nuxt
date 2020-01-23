@@ -55,6 +55,11 @@
                     <span class="md-error" v-if="!$v.form.email.required">The email is required</span>
                     <span class="md-error" v-else-if="!$v.form.email.email">Invalid email</span>
                 </md-field>
+
+                <md-field>
+      <label>Type your query here</label>
+      <md-textarea v-model="form.query" md-autogrow></md-textarea>
+    </md-field>
             </md-card-content>
 
             <md-progress-bar md-mode="indeterminate" v-if="sending" />
@@ -92,6 +97,7 @@ export default {
             gender: null,
             age: null,
             email: null,
+            query:null
         },
         userSaved: false,
         sending: false,
