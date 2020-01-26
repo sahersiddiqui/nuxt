@@ -220,7 +220,6 @@ ul.token-input-list-facebook {
 
 /**************Header*********************/
 header {
-  position: absolute;
   width: 100%;
   padding: 16px 0;
   -webkit-transition: .5s all;
@@ -453,13 +452,7 @@ li.edtech:hover .horizontal-subchild {
 
 /************************Header Close****************/
 /************************Footer***********************/
-footer {
-  background: #f7f8fc;
-  padding: 50px 0px 0;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  border-top: 1px solid #f0f0f0; }
+
   footer .footer_row {
     display: flex;
     margin: 0 -10px; }
@@ -4123,54 +4116,48 @@ textarea[readonly~="false"] {
 .offer_section {
   margin: -15px 0 0 0; }
 
-.offer-img {
-  position: relative;
-  left: -99px;
-  width: 480px; }
-  .offer-img img {
-    width: 100%; }
-  .offer-img:before {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    content: "";
-    background: rgba(239, 120, 35, 0.8); }
-
 .offer_option {
-  position: absolute;
-  width: 221px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
 
+background-image: url(/images/homepage.JPG);
+
+width: 70%;
+margin: 0 auto;
+
+}
+.offer_option > ul{
+  background: rgba(239, 120, 35, 0.8);
+
+
+}
 .offer_option ul li {
   padding: 35px 0 35px 54px;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
-  position: relative; }
+  /* position: relative;  */
+}
   .offer_option ul li:before {
-    position: absolute;
+    /* position: absolute; */
     content: "";
     width: 39px;
     height: 40px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    left: 0;
-    top: 50%;
+    /* left: 0; */
+    /* top: 50%; */
     transform: translateY(-50%); }
 
 .cr:before {
-  background-image: url("/images/cr.png"); }
+  background-image: url(/images/cr.png); }
 
 .cd:before {
-  background-image: url("/images/cd.png"); }
+  background-image: url(/images/cd.png); }
 
 .ed:before {
-  background-image: url("/images/ed.png"); }
+  background-image: url(/images/ed.png); }
 
 .nt:before {
-  background-image: url("/images/nt.png"); }
+  background-image: url(/images/nt.png); }
 
 .leaderboard_card {
   padding: 20px;

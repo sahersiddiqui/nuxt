@@ -1,16 +1,12 @@
 <template>
-<div>
-    <div class="custom_container">
-        <div class="flex_row">
-            <div class="courses_col">
-                <figure class="offer-img">
-                    <img src="/images/homepage.JPG" data-src="/images/homepage.JPG" class=" ls-is-cached lazyloaded">
+<div class="md-layout">
+            <div class=" md-layout-item md-size-30">
                     <div class="offer_option">
                         <ul>
-                            
-                            <a title="Leaderboard" href="https://gurushala.co/leaderboard/overall">
+                            <nuxt-link title="Leaderboard" to="/leaderboard">
                                 <li class="cr">Leaderboard</li>
-                            </a>
+                            </nuxt-link>
+                            
                             <a title="Teacher Communities" href="https://gurushala.co/lac/area">
                                 <li class="cd">Teacher Communities</li>
                             </a>
@@ -22,9 +18,8 @@
                             </a>
                         </ul>
                     </div>
-                </figure>
             </div>
-            <div class="courses_card_col">
+            <div class=" md-layout-item">
                 <h2 class="section_title text-left">Gurushala Offers</h2>
                 <div class="in">
 
@@ -95,8 +90,6 @@
                     </div>
 
                 </div>
-            </div>
-        </div>
 
 
     </div>
@@ -108,7 +101,7 @@ export default {
     components: {},
     data() {
         return {
-            title: "dsdsadsaddasdad"
+            title: "Home"
         };
     },
     head() {

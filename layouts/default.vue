@@ -1,7 +1,6 @@
 <template>
 <div>
-    <header>
-        <div class="md-layout">
+    <header class="md-layout">
             <div class="md-layout-item md-size-15">
                 <figure>
                     <img src="/images/logo.png">
@@ -23,16 +22,14 @@
             </div>
             <div class="md-layout-item">
             </div>
-        </div>
     </header>
-    <section class=" offer_section">
+    <section >
         <nuxt/>
     </section>
-    <footer>
+    <footer >
                 <!--Footer Nav Option-->
-        <div class="custom_container">
-            <div class="footer_row">
-                <div class="flex-col-sm-33 flex-col-xs-33">
+            <div class="md-layout">
+                <div class="md-layout-item">
                     <span class="footer_title">About Us</span>
                     <div class="footer-list">
                         <ul>
@@ -42,7 +39,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="flex-col-sm-33 flex-col-xs-33">
+                <div class="md-layout-item">
                     <span class="footer_title">Gallery</span>
                     <div class="footer-list">
                         <ul>
@@ -54,7 +51,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="flex-col-sm-33 flex-col-xs-33">
+                <div class="md-layout-item">
                     <span class="footer_title">Get Involved</span>
                     <div class="footer-list">
                         <ul>
@@ -65,7 +62,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="flex-col-sm-33 flex-col-xs-33">
+                <div class="md-layout-item">
                     <span class="footer_title">Partners</span>
                     <div class="footer-list">
                         <ul>
@@ -78,45 +75,40 @@
                         </ul>
                     </div>
                 </div>
-            </div>
         </div>
         <!--Footer Nav Option Close-->
         <!--Brand Partner-->
-        <div class="brand_wrapper">
-            <div class="custom_container">
-                <div class="footer_row vertical_mid">
-                    <div class="flex-col-sm-33 flex-col-xs-333 flex-col-xs-33">
+        <div class="brand_wrapper md-layout">
+                    <div class="md-layout-item">
                         <figure class="footer-logo">
                             <img src="https://gurushala.co/front/images/foot-logo.png" alt="gurushala">
                         </figure>
                     </div>
-                    <div class="flex-col-sm-33 flex-col-xs-333 flex-col-xs-33">
+                    <div class="md-layout-item">
                         <figure class="footer-logo">
                             <img src="https://gurushala.co/front/images/pratham-logo.png" alt="pratham">
                         </figure>
                     </div>
-                    <div class="flex-col-sm-33 flex-col-xs-333 flex-col-xs-33">
+                    <div class="md-layout-item">
                         <figure class="footer-logo">
                             <img src="https://gurushala.co/front/images/vodafone-logo.png" alt="vodafone">
                         </figure>
                     </div>
-                    <div class="flex-col-sm-33 flex-col-xs-333 flex-col-xs-33">
+                    <div class="md-layout-item">
                         <figure class="footer-logo">
                             <img src="https://gurushala.co/front/images/indus-tower.png" alt="indus-tower">
                         </figure>
                     </div>
-                </div>
-            </div>
         </div>
         <!--Brand Partner Close-->
         <!--Copy Right Footer-->
         <div class="copy-right-foot">
             <div class="custom_container">
-                <div class="flex-row vertical_mid">
-                    <div class="flex-col-sm-4">
+                <div class=" md-layout vertical_mid">
+                    <div class="md-layout-item">
                         <p class="cpyt">© 2020  gurushala. All rights reserved.</p>
                     </div>
-                    <div class="flex-col-sm-4">
+                    <div class="md-layout-item">
                         <div class="tnc_nav">
                             <li><a href="https://gurushala.co/page/terms-and-condition">Terms and Conditions</a></li>
                             <li><a href="https://gurushala.co/page/privacy-policy">Privacy Policy</a></li>
