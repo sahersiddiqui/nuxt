@@ -11,7 +11,7 @@
                 <md-menu md-size="medium" md-align-trigger>
                     <md-button md-menu-trigger>
                         Explore
-                        <md-icon md-src="/assets/icons/keyboard_arrow_down.svg"/> 
+                        <md-icon md-src="icons/keyboard_arrow_down.svg"/> 
                     </md-button>
                     <md-menu-content>
                         <md-menu-item>My Item 1</md-menu-item>
