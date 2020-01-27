@@ -35,7 +35,9 @@
                     <ul>
                         <li><a href="https://gurushala.co/page/story">Our Journey</a></li>
 
-                        <li><a href="https://gurushala.co/contact-us">Contact Us</a></li>
+                        <li>
+                            <nuxt-link to="/contact">Contact Us</nuxt-link>
+                        </li>
                     </ul>
                 </div>
             </div>
