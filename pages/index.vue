@@ -19,7 +19,7 @@
             </ul>
         </div>
     </div>
-    <div class="md-layout-item">
+    <div class="courses_card_col md-layout-item">
         <h2 class="section_title text-left">Gurushala Offers</h2>
         <div class="in">
             <div class="md-layout">

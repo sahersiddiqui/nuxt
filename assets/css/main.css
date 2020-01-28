@@ -1357,13 +1357,17 @@ Material CSS Start For Form Element
 @font-face {
   font-family: 'Conv_VODAFONERG_0';
   src: url(/assets/fonts/VODAFONERG_0.eot);
-  src: local("☺"), url(/assets/fonts/VODAFONERG_0.woff) format("woff"), url(/assets/fonts/VODAFONERG_0.ttf) format("truetype"), url(/assets/fonts/VODAFONERG_0.svg) format("svg");
+  src: url(/assets/fonts/VODAFONERG_0.woff) format("woff"); 
+  src : url(/assets/fonts/VODAFONERG_0.ttf) format("truetype");
+  src:  url(/assets/fonts/VODAFONERG_0.svg) format("svg");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'Conv_VODAFONERGBD_0';
   src: url(/assets/fonts/VODAFONERGBD_0.eot);
-  src: local("☺"), url(/assets/fonts/VODAFONERGBD_0.woff) format("woff"), url(/assets/fonts/VODAFONERGBD_0.ttf) format("truetype"), url(/assets/fonts/VODAFONERGBD_0.svg) format("svg");
+  src: url(/assets/fonts/VODAFONERGBD_0.woff) format("woff");
+  src :  url(/assets/fonts/VODAFONERGBD_0.ttf) format("truetype");
+  src :  url(/assets/fonts/VODAFONERGBD_0.svg) format("svg");
   font-weight: normal;
   font-style: normal; }
 body {
@@ -4114,19 +4118,18 @@ textarea[readonly~="false"] {
         object-fit: cover; }
 
 .offer_section {
-  margin: -15px 0 0 0; }
+  min-height: 500px;
+}
 
 .offer_option {
-
 background-image: url(/images/homepage.JPG);
-
-width: 70%;
-margin: 0 auto;
+width: 100%;
+height: 95%;
 
 }
 .offer_option > ul{
   background: rgba(239, 120, 35, 0.8);
-
+  height: 100%;
 
 }
 .offer_option ul li {
@@ -4143,9 +4146,12 @@ margin: 0 auto;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    left: 90px;
-    transform: translateY(-50%); }
+    margin-left: -50px;
+  }
 
+  .offer_option > ul {
+    padding: 85px;
+}
 .cr:before {
   background-image: url(/images/cr.png); }
 

@@ -23,7 +23,7 @@
         <div class="md-layout-item">
         </div>
     </header>
-    <section>
+    <section class=" offer_section">
         <nuxt />
     </section>
     <footer >
