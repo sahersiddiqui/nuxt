@@ -10,6 +10,27 @@
   -moz-appearance: value;
   appearance: value;
   word-break: break-word; }
+@font-face {
+  font-family: 'Conv_VODAFONERG_0';
+  src: url(/assets/fonts/VODAFONERG_0.eot);
+  src: url(/assets/fonts/VODAFONERG_0.woff) format("woff"); 
+  src : url(/assets/fonts/VODAFONERG_0.ttf) format("truetype");
+  src:  url(/assets/fonts/VODAFONERG_0.svg) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Conv_VODAFONERGBD_0';
+  src: url(/assets/fonts/VODAFONERGBD_0.eot);
+  src: url(/assets/fonts/VODAFONERGBD_0.woff) format("woff");
+  src :  url(/assets/fonts/VODAFONERGBD_0.ttf) format("truetype");
+  src :  url(/assets/fonts/VODAFONERGBD_0.svg) format("svg");
+  font-weight: normal;
+  font-style: normal; 
+}
+body {
+  font-family: 'Conv_VODAFONERG_0' !important; 
+}
+
 
 html,
 body,
@@ -452,7 +473,11 @@ li.edtech:hover .horizontal-subchild {
 
 /************************Header Close****************/
 /************************Footer***********************/
-
+footer {
+    background: #f7f8fc;
+    padding: 50px 0px 0;
+    border-top: 1px solid #f0f0f0;
+}
   footer .footer_row {
     display: flex;
     margin: 0 -10px; }
@@ -1354,32 +1379,7 @@ Material CSS Start For Form Element
     background: #f47920;
     color: #ffffff; }
 
-@font-face {
-  font-family: 'Conv_VODAFONERG_0';
-  src: url(/assets/fonts/VODAFONERG_0.eot);
-  src: url(/assets/fonts/VODAFONERG_0.woff) format("woff"); 
-  src : url(/assets/fonts/VODAFONERG_0.ttf) format("truetype");
-  src:  url(/assets/fonts/VODAFONERG_0.svg) format("svg");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: 'Conv_VODAFONERGBD_0';
-  src: url(/assets/fonts/VODAFONERGBD_0.eot);
-  src: url(/assets/fonts/VODAFONERGBD_0.woff) format("woff");
-  src :  url(/assets/fonts/VODAFONERGBD_0.ttf) format("truetype");
-  src :  url(/assets/fonts/VODAFONERGBD_0.svg) format("svg");
-  font-weight: normal;
-  font-style: normal; }
-body {
-  font-family: 'Conv_VODAFONERG_0'; }
-@font-face {
-  body {
-    font-family: 'Conv_VODAFONERG_0';
-    src: url(/assets/fonts/VODAFONERG_0.eot) format("eot"), url(/assets/fonts/VODAFONERG_0.woff) format("woff"), url(/assets/fonts/VODAFONERG_0.ttf.ttf) format("truetype"), url(/assets/fonts/VODAFONERG_0.svg) format("svg");
-    font-weight: normal;
-	font-style: normal; } 
 
-}
 .app_wrapper {
   position: relative;
   min-height: 100%;
@@ -4119,12 +4119,13 @@ textarea[readonly~="false"] {
 
 .offer_section {
   min-height: 500px;
+  background-color: #ffffff;
 }
 
 .offer_option {
 background-image: url(/images/homepage.JPG);
 width: 100%;
-height: 95%;
+height: 100%;
 
 }
 .offer_option > ul{

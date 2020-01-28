@@ -3,7 +3,11 @@
     <header class="md-layout">
         <div class="md-layout-item md-size-15">
             <figure>
-                <img src="/images/logo.png">
+                <nuxt-link to="/">
+                    <img src="/images/logo.png">
+
+                </nuxt-link>
+
             </figure>
         </div>
         <div class="md-layout-item ">
@@ -26,7 +30,7 @@
     <section class=" offer_section">
         <nuxt />
     </section>
-    <footer >
+    <footer>
         <!--Footer Nav Option-->
         <div class="md-layout">
             <div class="md-layout-item">
