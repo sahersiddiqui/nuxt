@@ -1,16 +1,14 @@
 <template>
 <div>
-    <header class="md-layout">
+    <header class="md-layout md-gutter">
         <div class="md-layout-item md-size-15">
             <figure>
                 <nuxt-link to="/">
                     <img src="/images/logo.png">
-
                 </nuxt-link>
-
             </figure>
         </div>
-        <div class="md-layout-item ">
+        <div class="md-layout-item md-size-30">
             <md-menu md-size="medium" md-align-trigger>
                 <md-button md-menu-trigger>
                     Explore
@@ -25,6 +23,70 @@
             <input type="text" />
         </div>
         <div class="md-layout-item">
+            <div class="nav_col nav_menu">
+                <ul>
+                    <li class="about_us angle_dropwn">
+                        <nuxt-link to="javascript:void(0)">About Us</nuxt-link>
+                        <div class="fisrtlevl_list">
+                            <ul>
+                                <li><nuxt-link to="/page/story">Our Journey</nuxt-link></li>
+
+                                <li><nuxt-link to="/contact-us">Contact Us</nuxt-link></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="partners angle_dropwn">
+                        <nuxt-link to="javascript:void(0)">Partners</nuxt-link>
+                        <div class="fisrtlevl_list">
+                            <ul>
+                                <li><nuxt-link to="/partner/school-institue">School Institutions</nuxt-link>
+                                </li>
+                                <li><nuxt-link to="/partner/content-collaborator">Content Collaborator</nuxt-link></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="partners">
+                        <nuxt-link to="/repository/courses-saved">My Repository</nuxt-link>
+                    </li>
+
+                    <li class="language">
+                        <div class=" after-login angle_dropwn">
+                            <figure class="user-sm-img">
+                                <img src="https://appinventiv-development.s3.amazonaws.com/gurushala/profile/1577697396" alt="user-name">
+                            </figure>
+                            <span class="user-log-name">Najmussaher Siddiqui</span>
+                        </div>
+
+                        <div class=" fisrtlevl_list">
+                            <ul>
+                                <li>
+                                    <nuxt-link to="/profile/follower">Profile</nuxt-link>
+                                </li>
+                                <li>
+                                    <nuxt-link to="/notifications">Notification 6</nuxt-link>
+                                </li>
+                                <li>
+                                    <nuxt-link to="javascript:void(0)" class="account" data-toggle="modal" data-target="#myModal-logout">Logout</nuxt-link>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="angle_dropwn language">
+                        <nuxt-link to="javascript:void(0)">English</nuxt-link>
+                        <div class="fisrtlevl_list">
+                            <ul>
+                                <li>
+                                    <nuxt-link to="/lang/ZW4=">English</nuxt-link>
+                                </li>
+                                <li>
+                                    <nuxt-link to="/lang/aGk=">Hindi</nuxt-link>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
     <section class=" offer_section">
@@ -37,7 +99,7 @@
                 <span class="footer_title">About Us</span>
                 <div class="footer-list">
                     <ul>
-                        <li><a href="https://gurushala.co/page/story">Our Journey</a></li>
+                        <li><nuxt-link to="https://gurushala.co/page/story">Our Journey</nuxt-link></li>
 
                         <li>
                             <nuxt-link to="/contact">Contact Us</nuxt-link>
@@ -50,9 +112,9 @@
                 <div class="footer-list">
                     <ul>
 
-                        <li><a href="https://gurushala.photo.blog/" target="_blank">Photos</a>
+                        <li><nuxt-link to="https://gurushala.photo.blog/" target="_blank">Photos</nuxt-link>
                         </li>
-                        <li><a href="https://www.youtube.com./channel/UCY3vP3nIEhMff0IqxWy46Gw" target="_blank">Videos</a>
+                        <li><nuxt-link to="https://www.youtube.com./channel/UCY3vP3nIEhMff0IqxWy46Gw" target="_blank">Videos</nuxt-link>
                         </li>
                     </ul>
                 </div>
@@ -61,9 +123,9 @@
                 <span class="footer_title">Get Involved</span>
                 <div class="footer-list">
                     <ul>
-                        <li><a href="https://gurushala.co/page/volunteer">Volunteer</a></li>
+                        <li><nuxt-link to="https://gurushala.co/page/volunteer">Volunteer</nuxt-link></li>
                         <li>
-                            <a href="https://gurushala.co/page/join-us">Careers</a>
+                            <nuxt-link to="https://gurushala.co/page/join-us">Careers</nuxt-link>
                         </li>
                     </ul>
                 </div>
@@ -73,10 +135,10 @@
                 <div class="footer-list">
                     <ul>
                         <li>
-                            <a href="https://gurushala.co/partner/school-institue">School Institutions</a>
+                            <nuxt-link to="https://gurushala.co/partner/school-institue">School Institutions</nuxt-link>
                         </li>
                         <li>
-                            <a href="https://gurushala.co/partner/content-collaborator">Content Collaborator</a>
+                            <nuxt-link to="https://gurushala.co/partner/content-collaborator">Content Collaborator</nuxt-link>
                         </li>
                     </ul>
                 </div>
@@ -116,9 +178,9 @@
                     </div>
                     <div class="md-layout-item">
                         <div class="tnc_nav">
-                            <li><a href="https://gurushala.co/page/terms-and-condition">Terms and Conditions</a></li>
-                            <li><a href="https://gurushala.co/page/privacy-policy">Privacy Policy</a></li>
-                            <li><a href="https://gurushala.co/page/faq">FAQ</a></li>
+                            <li><nuxt-link to="https://gurushala.co/page/terms-and-condition">Terms and Conditions</nuxt-link></li>
+                            <li><nuxt-link to="https://gurushala.co/page/privacy-policy">Privacy Policy</nuxt-link></li>
+                            <li><nuxt-link to="https://gurushala.co/page/faq">FAQ</nuxt-link></li>
                         </div>
                     </div>
 

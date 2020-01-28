@@ -7,15 +7,15 @@
                     <li class="cr">Leaderboard</li>
                 </nuxt-link>
 
-                <a title="Teacher Communities" href="https://gurushala.co/lac/area">
+                <nuxt-link title="Teacher Communities" to="/lac/area">
                     <li class="cd">Teacher Communities</li>
-                </a>
-                <a title="Teaching Modules" href="https://gurushala.co/course">
+                </nuxt-link>
+                <nuxt-link title="Teaching Modules" to="/course">
                     <li class="ed">Teaching Modules</li>
-                </a>
-                <a title="Teacher Stories" href="https://gurushala.co/ed-tech?category%5B%5D=70">
+                </nuxt-link>
+                <nuxt-link title="Teacher Stories" to="/ed-tech?category%5B%5D=70">
                     <li class="nt">Teacher Stories</li>
-                </a>
+                </nuxt-link>
             </ul>
         </div>
     </div>
@@ -25,7 +25,7 @@
             <div class="md-layout md-gutter">
                 <div class="md-layout-item md-medium-size-30 md-small-size-100">
                     <div class="offer_card">
-                        <a href="https://gurushala.co/course">
+                        <nuxt-link to="/course">
                             <div class="inner_wrap">
                                 <figure class="offer_cousres_img">
                                     <img src="/images/box1.JPG" data-src="/images/box1.JPG" class=" ls-is-cached lazyloaded">
@@ -35,12 +35,12 @@
                                     Enroll in self-paced, interactive and free to use online courses on innovative pedagogies, classroom management et all
                                 </p>
                             </div>
-                        </a>
+                        </nuxt-link>
                     </div>
                 </div>
                 <div class="md-layout-item md-medium-size-50 md-small-size-100">
                     <div class="offer_card">
-                        <a href="https://gurushala.co/content">
+                        <nuxt-link to="/content">
                             <div class="inner_wrap">
                                 <figure class="offer_cousres_img">
                                     <img src="/images/box2.JPG" data-src="/images/box2.JPG" class=" ls-is-cached lazyloaded">
@@ -50,7 +50,7 @@
                                     Explore a diverse range of free to use and curriculum-aligned online content
                                 </p>
                             </div>
-                        </a>
+                        </nuxt-link>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
             <div class="md-layout md-gutter">
                 <div class="md-layout-item  md-medium-size-50 md-small-size-100">
                     <div class="offer_card">
-                        <a href="https://gurushala.co/ed-tech">
+                        <nuxt-link to="/ed-tech">
                             <div class="inner_wrap">
                                 <figure class="offer_cousres_img">
                                     <img src="/images/box3.JPG" data-src="/images/box3.JPG" class=" ls-is-cached lazyloaded">
@@ -68,12 +68,12 @@
                                     Update yourself with diverse research and inspiring real-life stories on themes like pedagogy, ed-tech and much more
                                 </p>
                             </div>
-                        </a>
+                        </nuxt-link>
                     </div>
                 </div>
                 <div class="md-layout-item md-medium-size-50 md-small-size-100">
                     <div class="offer_card">
-                        <a href="https://gurushala.co/networking">
+                        <nuxt-link to="/networking">
                             <div class="inner_wrap">
                                 <figure class="offer_cousres_img">
                                     <img src="/images/box4.JPG" data-src="/images/box4.JPG" class=" ls-is-cached lazyloaded">
@@ -83,7 +83,7 @@
                                     Connect and engage in discussion groups with teachers across India and share your classroom experiences
                                 </p>
                             </div>
-                        </a>
+                        </nuxt-link>
                     </div>
                 </div>
             </div>
