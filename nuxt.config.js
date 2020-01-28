@@ -23,8 +23,9 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '@/assets/css/main.css',
+    // 'vue-material/dist/theme/default.css',
     '@/assets/css/variable.scss',
-    '@/assets/css/main.css'
   ],
 
   /*
