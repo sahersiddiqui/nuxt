@@ -31,6 +31,12 @@ body {
   font-family: 'Conv_VODAFONERG_0' !important; 
 }
 
+.md-primary {
+  color: #ef7823;
+}
+.md-accent {
+  color: #ef7823;
+}
 
 html,
 body,

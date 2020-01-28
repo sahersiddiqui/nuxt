@@ -23,6 +23,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '@/assets/css/variable.scss',
     '@/assets/css/main.css'
   ],
 

@@ -99,7 +99,7 @@
                 <span class="footer_title">About Us</span>
                 <div class="footer-list">
                     <ul>
-                        <li><nuxt-link to="https://gurushala.co/page/story">Our Journey</nuxt-link></li>
+                        <li><nuxt-link to="/page/story">Our Journey</nuxt-link></li>
 
                         <li>
                             <nuxt-link to="/contact">Contact Us</nuxt-link>
@@ -123,9 +123,9 @@
                 <span class="footer_title">Get Involved</span>
                 <div class="footer-list">
                     <ul>
-                        <li><nuxt-link to="https://gurushala.co/page/volunteer">Volunteer</nuxt-link></li>
+                        <li><nuxt-link to="/page/volunteer">Volunteer</nuxt-link></li>
                         <li>
-                            <nuxt-link to="https://gurushala.co/page/join-us">Careers</nuxt-link>
+                            <nuxt-link to="/page/join-us">Careers</nuxt-link>
                         </li>
                     </ul>
                 </div>
@@ -135,10 +135,10 @@
                 <div class="footer-list">
                     <ul>
                         <li>
-                            <nuxt-link to="https://gurushala.co/partner/school-institue">School Institutions</nuxt-link>
+                            <nuxt-link to="/partner/school-institue">School Institutions</nuxt-link>
                         </li>
                         <li>
-                            <nuxt-link to="https://gurushala.co/partner/content-collaborator">Content Collaborator</nuxt-link>
+                            <nuxt-link to="/partner/content-collaborator">Content Collaborator</nuxt-link>
                         </li>
                     </ul>
                 </div>
@@ -149,22 +149,22 @@
         <div class="brand_wrapper md-layout">
             <div class="md-layout-item">
                 <figure class="footer-logo">
-                    <img src="https://gurushala.co/front/images/foot-logo.png" alt="gurushala">
+                    <img src="/images/foot-logo.png" alt="gurushala">
                 </figure>
             </div>
             <div class="md-layout-item">
                 <figure class="footer-logo">
-                    <img src="https://gurushala.co/front/images/pratham-logo.png" alt="pratham">
+                    <img src="/images/pratham-logo.png" alt="pratham">
                 </figure>
             </div>
             <div class="md-layout-item">
                 <figure class="footer-logo">
-                    <img src="https://gurushala.co/front/images/vodafone-logo.png" alt="vodafone">
+                    <img src="/images/vodafone-logo.png" alt="vodafone">
                 </figure>
             </div>
             <div class="md-layout-item">
                 <figure class="footer-logo">
-                    <img src="https://gurushala.co/front/images/indus-tower.png" alt="indus-tower">
+                    <img src="/images/indus-tower.png" alt="indus-tower">
                 </figure>
             </div>
         </div>
@@ -178,9 +178,9 @@
                     </div>
                     <div class="md-layout-item">
                         <div class="tnc_nav">
-                            <li><nuxt-link to="https://gurushala.co/page/terms-and-condition">Terms and Conditions</nuxt-link></li>
-                            <li><nuxt-link to="https://gurushala.co/page/privacy-policy">Privacy Policy</nuxt-link></li>
-                            <li><nuxt-link to="https://gurushala.co/page/faq">FAQ</nuxt-link></li>
+                            <li><nuxt-link to="/page/terms-and-condition">Terms and Conditions</nuxt-link></li>
+                            <li><nuxt-link to="/page/privacy-policy">Privacy Policy</nuxt-link></li>
+                            <li><nuxt-link to="/page/faq">FAQ</nuxt-link></li>
                         </div>
                     </div>
 
