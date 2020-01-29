@@ -24,7 +24,6 @@ module.exports = {
   */
   css: [
     '@/assets/css/main.css',
-    // 'vue-material/dist/theme/default.css',
     '@/assets/css/variable.scss',
   ],
 
@@ -32,7 +31,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/material-ui.js'
+    '@/plugins/material-ui.js',
+    '@/plugins/font-awesome.js',
   ],
   /*
   ** Nuxt.js dev-modules

@@ -8,44 +8,58 @@
                 </nuxt-link>
             </figure>
         </div>
-        <div class="md-layout-item md-size-30">
+        <div class="md-layout-item md-size-35">
             <md-menu md-size="medium" md-align-trigger>
-                <md-button md-menu-trigger>
-                    Explore
-                    <md-icon md-src="icons/keyboard_arrow_down.svg" />
-                </md-button>
+			<top-button title="Explore" md-menu-trigger/>
                 <md-menu-content>
                     <md-menu-item>My Item 1</md-menu-item>
                     <md-menu-item>My Item 2</md-menu-item>
                     <md-menu-item>My Item 3</md-menu-item>
                 </md-menu-content>
             </md-menu>
-            <input type="text" />
+            <!-- <input type="text" /> -->
         </div>
-        <div class="md-layout-item">
-            <div class="nav_col nav_menu">
+        <div class="md-layout-item md-size-50">
+			<md-menu md-size="medium" md-align-trigger>
+				<top-button title="About Us" md-menu-trigger/>
+                <md-menu-content>
+                    <md-menu-item><nuxt-link to="/page/story">Our Journey</nuxt-link></md-menu-item>
+                    <md-menu-item><nuxt-link to="/contact-us">Contact Us</nuxt-link></md-menu-item>
+                </md-menu-content>
+            </md-menu>
+			<md-menu md-size="medium" md-align-trigger>
+				<top-button title="Partners" md-menu-trigger/>
+                <md-menu-content>
+                    <md-menu-item><nuxt-link to="/partner/school-institue">School Institutions</nuxt-link></md-menu-item>
+                    <md-menu-item><nuxt-link to="/partner/content-collaborator">Content Collaborator</nuxt-link></md-menu-item>
+                </md-menu-content>
+            </md-menu>
+			<md-menu md-size="medium" md-align-trigger>
+				<top-button title="English" md-menu-trigger/>
+                <md-menu-content>
+                    <md-menu-item><nuxt-link to="/partner/school-institue">English</nuxt-link></md-menu-item>
+                    <md-menu-item><nuxt-link to="/partner/content-collaborator">Hindi</nuxt-link></md-menu-item>
+                </md-menu-content>
+            </md-menu>
+			<nuxt-link to="/my-repository">My Repository</nuxt-link>
+			<md-menu md-size="medium" md-align-trigger class="my-profile">
+					<img class="user-sm-img" src="https://appinventiv-development.s3.amazonaws.com/gurushala/profile/1577697396" alt="user-name">
+				<top-button title="Najmussaher" md-menu-trigger/>
+                <md-menu-content>
+                    <md-menu-item><nuxt-link to="/partner/school-institue">English</nuxt-link></md-menu-item>
+                    <md-menu-item><nuxt-link to="/partner/content-collaborator">Hindi</nuxt-link></md-menu-item>
+                </md-menu-content>
+            </md-menu>
+			<md-menu md-size="medium" md-align-trigger>
+				<top-button title="English" md-menu-trigger/>
+                <md-menu-content>
+                    <md-menu-item><nuxt-link to="/partner/school-institue">English</nuxt-link></md-menu-item>
+                    <md-menu-item><nuxt-link to="/partner/content-collaborator">Hindi</nuxt-link></md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <!-- <div class="nav_col nav_menu">
+
                 <ul>
-                    <li class="about_us angle_dropwn">
-                        <nuxt-link to="javascript:void(0)">About Us</nuxt-link>
-                        <div class="fisrtlevl_list">
-                            <ul>
-                                <li><nuxt-link to="/page/story">Our Journey</nuxt-link></li>
-
-                                <li><nuxt-link to="/contact-us">Contact Us</nuxt-link></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="partners angle_dropwn">
-                        <nuxt-link to="javascript:void(0)">Partners</nuxt-link>
-                        <div class="fisrtlevl_list">
-                            <ul>
-                                <li><nuxt-link to="/partner/school-institue">School Institutions</nuxt-link>
-                                </li>
-                                <li><nuxt-link to="/partner/content-collaborator">Content Collaborator</nuxt-link></li>
-                            </ul>
-                        </div>
-                    </li>
-
                     <li class="partners">
                         <nuxt-link to="/repository/courses-saved">My Repository</nuxt-link>
                     </li>
@@ -86,7 +100,7 @@
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </header>
     <section class=" offer_section">
@@ -191,3 +205,11 @@
     </footer>
 </div>
 </template>
+<script>
+import topButton from "@/components/top-button";
+export default {
+	components : {
+		topButton
+	}
+}
+</script>
