@@ -8,7 +8,7 @@
                 </nuxt-link>
             </figure>
         </div>
-        <div class="md-layout-item md-size-35">
+        <div class="md-layout-item">
             <md-menu md-size="medium" md-align-trigger>
 			<top-button title="Explore" md-menu-trigger/>
                 <md-menu-content>
@@ -19,12 +19,12 @@
             </md-menu>
             <!-- <input type="text" /> -->
         </div>
-        <div class="md-layout-item md-size-50">
+        <div class="md-layout-item md-size-41">
 			<md-menu md-size="medium" md-align-trigger>
 				<top-button title="About Us" md-menu-trigger/>
                 <md-menu-content>
                     <md-menu-item><nuxt-link to="/page/story">Our Journey</nuxt-link></md-menu-item>
-                    <md-menu-item><nuxt-link to="/contact-us">Contact Us</nuxt-link></md-menu-item>
+                    <md-menu-item><nuxt-link to="/contact">Contact Us</nuxt-link></md-menu-item>
                 </md-menu-content>
             </md-menu>
 			<md-menu md-size="medium" md-align-trigger>
@@ -32,13 +32,6 @@
                 <md-menu-content>
                     <md-menu-item><nuxt-link to="/partner/school-institue">School Institutions</nuxt-link></md-menu-item>
                     <md-menu-item><nuxt-link to="/partner/content-collaborator">Content Collaborator</nuxt-link></md-menu-item>
-                </md-menu-content>
-            </md-menu>
-			<md-menu md-size="medium" md-align-trigger>
-				<top-button title="English" md-menu-trigger/>
-                <md-menu-content>
-                    <md-menu-item><nuxt-link to="/partner/school-institue">English</nuxt-link></md-menu-item>
-                    <md-menu-item><nuxt-link to="/partner/content-collaborator">Hindi</nuxt-link></md-menu-item>
                 </md-menu-content>
             </md-menu>
 			<nuxt-link to="/my-repository">My Repository</nuxt-link>
