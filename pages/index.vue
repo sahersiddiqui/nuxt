@@ -22,7 +22,7 @@
     <div class="courses_card_col md-layout-item">
         <h2 class="section_title text-left">Gurushala Offers</h2>
         <div class="in">
-            <div class="md-layout md-gutter">
+            <div class="md-layout">
                 <div class="md-layout-item md-medium-size-30 md-small-size-100">
                     <div class="offer_card">
                         <nuxt-link to="/course">
@@ -55,7 +55,7 @@
                 </div>
             </div>
 
-            <div class="md-layout md-gutter">
+            <div class="md-layout">
                 <div class="md-layout-item  md-medium-size-50 md-small-size-100">
                     <div class="offer_card">
                         <nuxt-link to="/ed-tech">
