@@ -1,86 +1,89 @@
 <template>
-<div>
-	<md-dialog :md-active.sync="showLogin" class="modal-dialog md-scrollbar">
-		<md-dialog-title class="text-center">Log In</md-dialog-title>
-		<div class="account_form">
-			<div class="account_with">
-				<ul>
-					<li>
-						<a
-							href="https://gurushalaqa.appinventive.com/social-login/facebook"
-						>
-							<span class="img_fb">
-								<img
-									src="https://gurushalaqa.appinventive.com/front/images/fb-sm.svg"
-								/>
-							</span>
-							<span class="social_text">Facebook</span>
-						</a>
-					</li>
-					<li>
-						<a
-							href="https://gurushalaqa.appinventive.com/social-login/google"
-						>
-							<span class="img_gplus">
-								<img
-									src="https://gurushalaqa.appinventive.com/front/images/google-sm.svg"
-								/>
-							</span>
-							<span class="social_text">Google</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="md-layout md-gutter m-t-sm">
-				<div class="md-layout-item text-center">
-					<span class="reg">
-						Not a registered User?
-						<span class="signup" @click="loginFormHandle">
-							Sign Up
-						</span>
-					</span>
+	<div>
+		<el-dialog
+			title="Log In"
+			:visible.sync="showLogin"
+			class=""
+			width="500px"
+		>
+			<!-- <span class="text-center">Log In</span> -->
+			<div class="account_form">
+				<div class="account_with">
+					<ul>
+						<li>
+							<a
+								href="https://gurushalaqa.appinventive.com/social-login/facebook"
+							>
+								<span class="img_fb">
+									<img
+										src="https://gurushalaqa.appinventive.com/front/images/fb-sm.svg"
+									/>
+								</span>
+								<span class="social_text">Facebook</span>
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://gurushalaqa.appinventive.com/social-login/google"
+							>
+								<span class="img_gplus">
+									<img
+										src="https://gurushalaqa.appinventive.com/front/images/google-sm.svg"
+									/>
+								</span>
+								<span class="social_text">Google</span>
+							</a>
+						</li>
+					</ul>
 				</div>
-			</div>
-			<span class="or">OR</span>
-			<form novalidate @submit.prevent="validateUser">
-				<md-field>
-					<label>Mobile Number</label>
-					<md-input v-model="form.mobile"></md-input>
-				</md-field>
-				<md-field>
-					<label>Password</label>
-					<md-input
-						type="password"
-						v-model="form.password"
-					></md-input>
-				</md-field>
-				<div class="md-layout md-gutter">
-					<div class="md-layout-item ">
+				<div class=" m-t-sm">
+					<div class="md-layout-item text-center">
 						<span class="reg">
-							Forgot Password?
+							Not a registered User?
+							<span class="signup" @click="loginFormHandle">
+								Sign Up
+							</span>
 						</span>
 					</div>
 				</div>
-				<div class="md-layout md-gutter">
-					<div class="md-layout-item ">
-						<md-checkbox v-model="form.string" value="my-checkbox"
-							>Remember me</md-checkbox
-						>
-					</div>
-					<div class="md-layout-item link_below text-right ">
-						<span class="">
-							Proceed with otp
-						</span>
-					</div>
-				</div>
-				<md-button class="md-raised md-primary">
-					Log In
-				</md-button>
-			</form>
-		</div>
-	</md-dialog>
-	<signup :active-signup.sync="showSignup" />
-</div>
+				<span class="or">OR</span>
+				<el-form :model="form" @submit.prevent="validateUser">
+					<el-form-item label="Mobile Number">
+						<el-input v-model="form.name"></el-input>
+					</el-form-item>
+					<el-form-item label="Password">
+						<el-input
+							v-model="form.password"
+							autocomplete="off"
+						></el-input>
+					</el-form-item>
+					<el-row :gutter="20">
+						<el-col>
+							<span class="reg">
+								Forgot Password?
+							</span>
+						</el-col>
+					</el-row>
+					<el-row>
+						<el-col :span="12">
+							<el-checkbox v-model="form.checked"
+								>Remember Me?</el-checkbox
+							>
+						</el-col>
+						<el-col :span="12" class="text-right">
+							<el-link class="link_below">
+								Proceed with otp
+							</el-link>
+						</el-col>
+					</el-row>
+					<el-button type="primary">
+						Log In
+					</el-button>
+				</el-form>
+			</div>
+		</el-dialog>
+		<!-- <signup :active-signup.sync="showSignup" /> -->
+	</div>
 </template>
 <script>
 import signup from "./signup";
@@ -100,11 +103,10 @@ export default {
 			}
 		};
 	},
-	methods:{
-		loginFormHandle(){
+	methods: {
+		loginFormHandle() {
 			this.showLogin = false;
 			this.showSignup = true;
-
 		}
 	},
 	watch: {
@@ -112,7 +114,6 @@ export default {
 			if (!val) {
 				this.$emit("update:active", val);
 			}
-
 		},
 		active(val) {
 			if (val) {
@@ -123,6 +124,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.el-row {
+	margin-bottom: 20px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
 .md-dialog {
 	max-height: 550px;
 	overflow: auto;

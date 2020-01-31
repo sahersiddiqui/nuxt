@@ -24,14 +24,16 @@ module.exports = {
   */
   css: [
     '@/assets/css/main.css',
-    '@/assets/css/variable.scss',
+    // '@/assets/css/variable.scss',
+    // '@/assets/css/element-variables.scss',
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/material-ui.js',
+    // '@/plugins/material-ui.js',
+    '@/plugins/element.js',
     '@/plugins/font-awesome.js',
     '@/plugins/vue-carousel.js',
     '@/plugins/lodash.js',

@@ -16,6 +16,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "axios": "^0.19.2",
     "cross-env": "^5.2.0",
+    "element-ui": "^2.13.0",
     "lodash": "^4.17.15",
     "node-sass": "^4.13.0",
     "nuxt": "^2.0.0",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.5.1",
+    "element-theme-chalk": "^2.13.0",
     "nodemon": "^1.18.9",
     "prettier": "^1.19.1"
   }
