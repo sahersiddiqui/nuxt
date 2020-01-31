@@ -1,4 +1,5 @@
 <template>
+<div>
 	<md-dialog :md-active.sync="showLogin" class="modal-dialog md-scrollbar">
 		<md-dialog-title class="text-center">Log In</md-dialog-title>
 		<div class="account_form">
@@ -34,7 +35,7 @@
 				<div class="md-layout-item text-center">
 					<span class="reg">
 						Not a registered User?
-						<span class="signup" @click="showLogin = false; showSignup = true">
+						<span class="signup" @click="loginFormHandle">
 							Sign Up
 						</span>
 					</span>
@@ -77,8 +78,9 @@
 				</md-button>
 			</form>
 		</div>
-		<signup :active="showSignup" />
 	</md-dialog>
+	<signup :active-signup.sync="showSignup" />
+</div>
 </template>
 <script>
 import signup from "./signup";
@@ -98,11 +100,19 @@ export default {
 			}
 		};
 	},
+	methods:{
+		loginFormHandle(){
+			this.showLogin = false;
+			this.showSignup = true;
+
+		}
+	},
 	watch: {
 		showLogin(val) {
 			if (!val) {
 				this.$emit("update:active", val);
 			}
+
 		},
 		active(val) {
 			if (val) {

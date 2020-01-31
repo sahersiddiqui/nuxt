@@ -46,13 +46,10 @@
 				</md-menu-content>
 			</md-menu>
 
-			<md-button class="md-primary md-raised" @click="active=true">
+			<md-button class="md-primary md-raised" @click="active = true">
 				Log In/Sign Up
 			</md-button>
-			<!-- <md-dialog :md-active.sync="active">
-				dsdad
-			</md-dialog> -->
-			<login :active.sync="active" />
+
 
 			<!-- <nuxt-link to="/my-repository">My Repository</nuxt-link> -->
 			<!-- <md-menu md-size="medium" md-align-trigger class="my-profile">
@@ -91,6 +88,9 @@
 				</md-menu-content>
 			</md-menu>
 		</div>
+
+		<login :active.sync="active"  />
+
 	</header>
 </template>
 
@@ -109,8 +109,9 @@ export default {
 			active: false
 		};
 	},
-	
-
+	methods:{
+		
+	}
 };
 </script>
 

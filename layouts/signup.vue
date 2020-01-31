@@ -1,5 +1,5 @@
 <template>
-	<md-dialog :md-active.sync="active" class="modal-dialog md-scrollbar">
+	<md-dialog :md-active.sync="showSignup" class="modal-dialog md-scrollbar">
 		<md-dialog-title class="text-center">Signup In</md-dialog-title>
 		<div class="account_form">
 			<div class="account_with">
@@ -82,14 +82,27 @@
 <script>
 export default {
     name:"signup",
-    props : ["active"],
+    props : ["active-signup"],
     data() {
 		return {
 			form: {
 				mobile: null,
 				password: null
-			}
+			},
+			showSignup : false
 		};
+	},
+	watch : {
+		activeSignup(val){
+			if(val){
+				this.showSignup = val
+			}
+		},
+		showSignup(val){
+			if(!val){
+				this.$emit("update:activeSignup",val)
+			}
+		}
 	}
 }
 </script>
