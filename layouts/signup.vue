@@ -45,7 +45,7 @@
 			</div>
 			<span class="or">OR</span>
 			<form novalidate @submit.prevent="validateForm">
-				<md-field :class="{'md-invalid': $_.has(errors, 'name') }">
+				<md-field :class="{ 'md-invalid': $_.has(errors, 'name') }">
 					<label>Name</label>
 					<md-input
 						v-model="form.name"
@@ -55,29 +55,30 @@
 					<span class="md-error" v-if="$_.has(errors, 'name')">
 						{{ errors.name }}
 					</span>
-				</md-field >
-				<md-field :class="{'md-invalid': $_.has(errors, 'email') }">
+				</md-field>
+				<md-field :class="{ 'md-invalid': $_.has(errors, 'email') }">
 					<label>Email Address</label>
 					<md-input v-model="form.email"></md-input>
 					<span class="md-error" v-if="$_.has(errors, 'email')">
 						{{ errors.email }}
 					</span>
 				</md-field>
-				<md-field :class="{'md-invalid': $_.has(errors, 'mobile') }">
+				<md-field :class="{ 'md-invalid': $_.has(errors, 'mobile') }">
 					<label>Mobile Number</label>
 					<md-input v-model="form.mobile"></md-input>
 					<span class="md-error" v-if="$_.has(errors, 'mobile')">
 						{{ errors.mobile }}
 					</span>
 				</md-field>
-				<div :class="{'md-invalid': $_.has(errors, 'gender') }">
+				<div class="">
 					<label class="md-layout">Gender</label>
 					<md-radio
-						class="md-primary"
+						:class="{ 'md-primary': true }"
 						v-model="form.gender"
 						value="male"
-						>Male</md-radio
 					>
+						Male
+					</md-radio>
 					<md-radio
 						class="md-primary"
 						v-model="form.gender"
@@ -90,11 +91,18 @@
 						value="other"
 						>Other</md-radio
 					>
-					<span class="md-error" v-if="$_.has(errors, 'gender')">
-						{{ errors.gender }}
-					</span>
+					<div :class="{ 'md-invalid': $_.has(errors, 'gender') }">
+						<span class="md-error" v-if="$_.has(errors, 'gender')">
+							{{ errors.gender }}
+						</span>
+					</div>
 				</div>
-				<div :class="{'md-layout':true, 'md-invalid': $_.has(errors, 'gender') } ">
+				<div
+					:class="{
+						'md-layout': true,
+						'md-invalid': $_.has(errors, 'gender')
+					}"
+				>
 					<md-checkbox
 						class="md-layout-item md-size-30"
 						v-model="form.agree"
@@ -117,10 +125,10 @@
 							Privacy Policy
 						</a>
 					</span>
-					<span class="md-error" v-if="$_.has(errors, 'agree')">
-						{{ errors.agree }}
-					</span>
 				</div>
+				<span class="md-error md-layout" v-if="$_.has(errors, 'agree')">
+					{{ errors.agree }}
+				</span>
 				<md-button type="submit" class="md-raised md-primary">
 					Sign Up
 				</md-button>
@@ -152,7 +160,8 @@ export default {
 				gender: null,
 				agree: null
 			},
-			showSignup: false
+			showSignup: false,
+			errors: {}
 		};
 	},
 	validations: {
