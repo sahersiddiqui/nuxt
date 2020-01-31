@@ -4866,7 +4866,7 @@ textarea[readonly~="false"] {
 
 .offer_card {
 	padding: 5px;
-	margin: 15px 0;
+	margin: 20px 20px
 }
 .offer_card .inner_wrap {
 	border: 1px solid #eceff4;

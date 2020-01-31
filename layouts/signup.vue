@@ -1,6 +1,6 @@
 <template>
-	<md-dialog :md-active.sync="showSignup" class="modal-dialog md-scrollbar">
-		<md-dialog-title class="text-center">Signup In</md-dialog-title>
+	<md-dialog :md-active.sync="showSignup" class="md-layout modal-dialog md-scrollbar">
+		<md-dialog-title class="text-center">Sign Up</md-dialog-title>
 		<div class="account_form">
 			<div class="account_with">
 				<ul>
@@ -22,7 +22,7 @@
 						>
 							<span class="img_gplus">
 								<img
-									rc="https://gurushalaqa.appinventive.com/front/images/google-sm.svg"
+									src="https://gurushalaqa.appinventive.com/front/images/google-sm.svg"
 								/>
 							</span>
 							<span class="social_text">Google</span>
@@ -33,9 +33,9 @@
 			<div class="md-layout md-gutter m-t-sm">
 				<div class="md-layout-item text-center">
 					<span class="reg">
-						Not a registered User?
+						Already Registered ?
 						<span class="signup signup_form_open">
-							Sign Up
+							Log In
 						</span>
 					</span>
 				</div>
@@ -43,37 +43,60 @@
 			<span class="or">OR</span>
 			<form novalidate @submit.prevent="validateUser">
 				<md-field>
+					<label>Name</label>
+					<md-input v-model="form.name"></md-input>
+				</md-field>
+				<md-field>
+					<label>Email Address</label>
+					<md-input v-model="form.email"></md-input>
+				</md-field>
+				<md-field>
 					<label>Mobile Number</label>
 					<md-input v-model="form.mobile"></md-input>
 				</md-field>
-				<md-field>
-					<label>Password</label>
-					<md-input
-						type="password"
-						v-model="form.password"
-					></md-input>
-				</md-field>
-				<div class="md-layout md-gutter">
-					<div class="md-layout-item ">
-						<span class="reg">
-							Forgot Password?
-						</span>
-					</div>
+				<div>
+					<label class="md-layout">Gender</label>
+					<md-radio
+						class="md-primary"
+						v-model="form.gender"
+						value="male"
+						>Male</md-radio
+					>
+					<md-radio
+						class="md-primary"
+						v-model="form.gender"
+						value="femail"
+						>Female</md-radio
+					>
+					<md-radio
+						class="md-primary"
+						v-model="form.gender"
+						value="other"
+						>Other</md-radio
+					>
 				</div>
-				<div class="md-layout md-gutter">
-					<div class="md-layout-item ">
-						<md-checkbox v-model="form.string" value="my-checkbox"
-							>Remember me</md-checkbox
+				<div class="md-layout">
+					<md-checkbox class="md-layout-item md-size-30" v-model="form.agree" value="1">
+						I agree to the
+					</md-checkbox>
+					<span class="md-layout-item terms">
+						<a
+							href="http://localhost:8000/page/terms-and-condition"
+							class="tnc_link "
 						>
-					</div>
-					<div class="md-layout-item link_below text-right ">
-						<span class="">
-							Proceed with otp
-						</span>
-					</div>
+							Terms and Conditions
+						</a>
+						<span class=""> and</span>
+						<a
+							href="http://localhost:8000/page/privacy-policy"
+							class="tnc_link "
+						>
+							Privacy Policy
+						</a>
+					</span>
 				</div>
 				<md-button class="md-raised md-primary">
-					Log In
+					Sign Up
 				</md-button>
 			</form>
 		</div>
@@ -81,34 +104,37 @@
 </template>
 <script>
 export default {
-    name:"signup",
-    props : ["active-signup"],
-    data() {
+	name: "signup",
+	props: ["active-signup"],
+	data() {
 		return {
 			form: {
 				mobile: null,
 				password: null
 			},
-			showSignup : false
+			showSignup: false
 		};
 	},
-	watch : {
-		activeSignup(val){
-			if(val){
-				this.showSignup = val
+	watch: {
+		activeSignup(val) {
+			if (val) {
+				this.showSignup = val;
 			}
 		},
-		showSignup(val){
-			if(!val){
-				this.$emit("update:activeSignup",val)
+		showSignup(val) {
+			if (!val) {
+				this.$emit("update:activeSignup", val);
 			}
 		}
 	}
-}
+};
 </script>
 <style lang="scss" scoped>
-  .md-dialog {
-    max-height: 550px;
-    overflow: auto;
-  }
+.md-dialog {
+	max-height: 550px;
+	overflow: auto;
+}
+.terms{
+	margin: 16px 16px 16px -16px
+}
 </style>
