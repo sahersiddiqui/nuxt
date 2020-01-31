@@ -8,7 +8,7 @@
 				<md-card-content>
 					<div class="md-layout md-gutter">
 						<div class="md-layout-item md-small-size-100">
-							<md-field :class="getValidationClass('firstName')">
+							<md-field :class="{'md-invalid':$_.has(errors, 'firstName') }">
 								<label for="first-name">First Name</label>
 								<md-input
 									name="first-name"
@@ -144,6 +144,7 @@ import {
 	minLength,
 	maxLength
 } from "vuelidate/lib/validators";
+
 import axios from "axios";
 import store from "vuex";
 

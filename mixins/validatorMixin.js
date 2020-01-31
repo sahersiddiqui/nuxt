@@ -28,6 +28,10 @@ var validationErrorMixin = {
 				} else if (this.$_.has(this.$v.form[element],'maxLength') && !this.$v.form[element].maxLength) {
                     this.errors[element] = `The ${_.lowerCase(element)} should not more than ${this.$v.form[element].$params.maxLength.max} letters`;
 				}
+				else {
+					this.errors = {}
+				}
+
 			});
 		}
 	}
