@@ -33,6 +33,7 @@ module.exports = {
   plugins: [
     '@/plugins/material-ui.js',
     '@/plugins/font-awesome.js',
+    '@/plugins/vue-carousel.js',
   ],
   /*
   ** Nuxt.js dev-modules
