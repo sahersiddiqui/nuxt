@@ -11,7 +11,7 @@
 				</div>
 			</el-col>
 			<el-col :span="9">
-				<el-menu class="el-menu-demo" mode="horizontal">
+				<el-menu class="el-menu-demo" mode="horizontal"   >
 					<el-submenu index="2">
 						<template slot="title">Explore</template>
 						<el-menu-item index="2-1">item one</el-menu-item>
@@ -150,5 +150,9 @@ export default {
 <style scoped>
 .el-menu.el-menu--horizontal {
     border-bottom:0;
+}
+
+.el-icon-arrow-down{
+    color: #ef7823;
 }
 </style>
