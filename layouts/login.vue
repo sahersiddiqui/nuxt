@@ -5,6 +5,7 @@
 			:visible.sync="showLogin"
 			class=""
 			width="500px"
+			v-on:closed="updateModal"
 		>
 			<!-- <span class="text-center">Log In</span> -->
 			<div class="account_form">
@@ -82,20 +83,17 @@
 				</el-form>
 			</div>
 		</el-dialog>
-		<!-- <signup :active-signup.sync="showSignup" /> -->
 	</div>
 </template>
 <script>
-import signup from "./signup";
 export default {
-	components: {
-		signup
-	},
+	components: {},
 	name: "login",
-	props: ["active"],
+	props: {
+		active: Object
+	},
 	data() {
 		return {
-			showSignup: false,
 			showLogin: false,
 			form: {
 				mobile: null,
@@ -106,19 +104,25 @@ export default {
 	methods: {
 		loginFormHandle() {
 			this.showLogin = false;
-			this.showSignup = true;
+			this.$emit("update:active", {activeLogin:false,activeSignup:true});
+		},
+		updateModal(){
+			this.$emit("update:active", {activeLogin:false,activeSignup:false});
 		}
 	},
 	watch: {
-		showLogin(val) {
-			if (!val) {
-				this.$emit("update:active", val);
-			}
-		},
-		active(val) {
-			if (val) {
-				this.showLogin = val;
-			}
+		// showLogin(val) {
+		// 	if (!val) {
+		// 		this.$emit("update:active", {activeLogin:false});
+		// 	}
+		// },
+		active: {
+			handler (val) {
+				if (val.activeLogin) {
+					this.showLogin = val.activeLogin;
+				}
+			},
+			deep :true
 		}
 	}
 };

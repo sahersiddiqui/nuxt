@@ -43,7 +43,7 @@
 							<el-menu-item index="2-1">Our Journey</el-menu-item>
 							<el-menu-item index="2-2">Contact Us</el-menu-item>
 						</el-submenu>
-						<el-menu-item index="5" @click="active = true"
+						<el-menu-item index="5" @click="modalVisible.activeLogin = true"
 							>Log In/Sign Up</el-menu-item
 						>
 
@@ -123,7 +123,8 @@
 				</div>
 			</el-col>
 		</el-row>
-		<login :active.sync="active" />
+		<login :active.sync="modalVisible"  />
+		<signup :active.sync="modalVisible"  />
 		
 	</header>
 </template>
@@ -131,19 +132,30 @@
 <script>
 import topButton from "@/components/top-button";
 import login from "./login";
+import signup from "./signup";
 
 export default {
 	name: "header-component",
 	components: {
 		topButton,
-		login
+		login,
+		signup
 	},
 	data() {
 		return {
-			active: false
+			modalVisible : {
+				activeLogin: false,
+				activeSignup: false
+
+			}
 		};
 	},
-	methods: {}
+	methods: {
+		updateModalVisible(){
+			this.modalVisible.activeLogin = false;
+			this.modalVisible.activeSignup = false;
+		}
+	}
 };
 </script>
 
