@@ -15,9 +15,9 @@
 							<a
 								href="https://gurushalaqa.appinventive.com/social-login/facebook"
 							>
-								<span class="img_fb">
-									<img
-										src="https://gurushalaqa.appinventive.com/front/images/fb-sm.svg"
+								<span class="fb_icon">
+									<font-awesome-icon
+										:icon="['fab', 'facebook-square']"
 									/>
 								</span>
 								<span class="social_text">Facebook</span>
@@ -28,9 +28,10 @@
 								href="https://gurushalaqa.appinventive.com/social-login/google"
 							>
 								<span class="img_gplus">
-									<img
-										src="https://gurushalaqa.appinventive.com/front/images/google-sm.svg"
+									<font-awesome-icon
+										:icon="['fab', 'google']"
 									/>
+									
 								</span>
 								<span class="social_text">Google</span>
 							</a>
@@ -104,10 +105,16 @@ export default {
 	methods: {
 		loginFormHandle() {
 			this.showLogin = false;
-			this.$emit("update:active", {activeLogin:false,activeSignup:true});
+			this.$emit("update:active", {
+				activeLogin: false,
+				activeSignup: true
+			});
 		},
-		updateModal(){
-			this.$emit("update:active", {activeLogin:false,activeSignup:false});
+		updateModal() {
+			this.$emit("update:active", {
+				activeLogin: false,
+				activeSignup: false
+			});
 		}
 	},
 	watch: {
@@ -117,12 +124,12 @@ export default {
 		// 	}
 		// },
 		active: {
-			handler (val) {
+			handler(val) {
 				if (val.activeLogin) {
 					this.showLogin = val.activeLogin;
 				}
 			},
-			deep :true
+			deep: true
 		}
 	}
 };

@@ -7,7 +7,6 @@
 			width="500px"
 			v-on:closed="updateModal"
 		>
-			<!-- <el-dialog-title class="text-center">Sign Up</el-dialog-title> -->
 			<div class="account_form">
 				<div class="account_with">
 					<ul>
@@ -15,11 +14,15 @@
 							<a
 								href="https://gurushalaqa.appinventive.com/social-login/facebook"
 							>
-								<span class="img_fb">
+								<font-awesome-icon
+									:icon="['fab', 'facebook-square']"
+								/>
+								<!-- 
+								<span class="fas fa-facebook-square">
 									<img
 										src="https://gurushalaqa.appinventive.com/front/images/fb-sm.svg"
 									/>
-								</span>
+								</span> -->
 								<span class="social_text">Facebook</span>
 							</a>
 						</li>
@@ -28,9 +31,13 @@
 								href="https://gurushalaqa.appinventive.com/social-login/google"
 							>
 								<span class="img_gplus">
-									<img
-										src="https://gurushalaqa.appinventive.com/front/images/google-sm.svg"
+									<font-awesome-icon
+										:icon="['fab', 'google']"
 									/>
+
+									<!-- <img
+										src="https://gurushalaqa.appinventive.com/front/images/google-sm.svg"
+									/> -->
 								</span>
 								<span class="social_text">Google</span>
 							</a>
@@ -51,75 +58,41 @@
 					</div>
 				</div>
 				<span class="or">OR</span>
-				<el-form :model="form" @submit.prevent="validateForm">
-					<el-form-item
-						:class="{ 'md-invalid': $_.has(errors, 'name') }"
-					>
-						<label>Name</label>
+				<el-form
+					:model="form"
+					:ref="formName"
+					:rules="rules"
+					class="demo-ruleForm"
+				>
+					<el-form-item prop="name" label="Name">
 						<el-input
 							v-model="form.name"
 							name="name"
 							id="name"
 						></el-input>
-						<span class="md-error" v-if="$_.has(errors, 'name')">
-							{{ errors.name }}
-						</span>
 					</el-form-item>
-					<el-form-item
-						:class="{ 'md-invalid': $_.has(errors, 'email') }"
-					>
-						<label>Email Address</label>
+					<el-form-item prop="email" label="Email">
 						<el-input v-model="form.email"></el-input>
-						<span class="md-error" v-if="$_.has(errors, 'email')">
-							{{ errors.email }}
-						</span>
 					</el-form-item>
-					<el-form-item
-						:class="{ 'md-invalid': $_.has(errors, 'mobile') }"
-					>
-						<label>Mobile Number</label>
+					<el-form-item prop="mobile" label="Mobile Number">
 						<el-input v-model="form.mobile"></el-input>
-						<span class="md-error" v-if="$_.has(errors, 'mobile')">
-							{{ errors.mobile }}
-						</span>
 					</el-form-item>
 					<div class="">
-						<label class="">Gender</label>
-						<el-radio
-							:class="{ 'md-primary': true }"
-							v-model="form.gender"
-							value="male"
-						>
-							Male
-						</el-radio>
-						<el-radio
-							class="md-primary"
-							v-model="form.gender"
-							value="femail"
-							>Female</el-radio
-						>
-						<el-radio
-							class="md-primary"
-							v-model="form.gender"
-							value="other"
-							>Other</el-radio
-						>
-						<div
-							:class="{ 'md-invalid': $_.has(errors, 'gender') }"
-						>
-							<span
-								class="md-error"
-								v-if="$_.has(errors, 'gender')"
-							>
-								{{ errors.gender }}
-							</span>
-						</div>
+						<el-form-item prop="gender" label="Gender">
+							<el-radio-group v-model="form.gender">
+								<el-radio label="male">
+									Male
+								</el-radio>
+								<el-radio label="femail">
+									Female
+								</el-radio>
+								<el-radio label="other">
+									Other
+								</el-radio>
+							</el-radio-group>
+						</el-form-item>
 					</div>
-					<div
-						:class="{
-							'md-invalid': $_.has(errors, 'gender')
-						}"
-					>
+					<div>
 						<el-checkbox
 							class=" md-size-30"
 							v-model="form.agree"
@@ -143,13 +116,12 @@
 							</a>
 						</span>
 					</div>
-					<span
-						class="md-error md-layout"
-						v-if="$_.has(errors, 'agree')"
+
+					<el-button
+						type="submit"
+						class="md-raised md-primary"
+						@click="validateForm"
 					>
-						{{ errors.agree }}
-					</span>
-					<el-button type="submit" class="md-raised md-primary">
 						Sign Up
 					</el-button>
 				</el-form>
@@ -159,7 +131,7 @@
 </template>
 <script>
 // import { validationMixin } from "vuelidate";
-import { validationErrorMixin } from "@/mixins/validatorMixin";
+// import { validationErrorMixin } from "@/mixins/validatorMixin";
 
 // import {
 // 	required,
@@ -174,9 +146,9 @@ export default {
 	props: {
 		active: Object
 	},
-	mixins: [ validationErrorMixin],
 	data() {
 		return {
+			formName: "signup-form",
 			form: {
 				email: null,
 				name: null,
@@ -184,32 +156,62 @@ export default {
 				gender: null,
 				agree: null
 			},
+			rules: {
+				name: [
+					{
+						required: true,
+						message: "Please input name",
+						trigger: "blur"
+					},
+					{
+						min: 3,
+						max: 5,
+						message: "Length should be 3 to 5",
+						trigger: "blur"
+					}
+				],
+				email: [
+					{
+						required: true,
+						message: "Please input email",
+						trigger: "change"
+					},
+					{
+						type: "email",
+						message: "Please enter valid email",
+						trigger: "change"
+					}
+				],
+				mobile: [
+					{
+						required: true,
+						message: "Please input mobile number",
+						trigger: "change"
+					},
+					{
+						type: "integer",
+						message: "Please enter valid mobile number",
+						trigger: "change"
+					},
+					{
+						min: 8,
+						max: 10,
+						message: "Length should be 8 to 10",
+						trigger: "blur"
+					}
+				],
+				gender: [
+					{
+						required: true,
+						message: "Please select gender",
+						trigger: "change"
+					}
+				]
+			},
 			showSignup: false,
 			errors: {}
 		};
 	},
-	// validations: {
-	// 	form: {
-	// 		name: {
-	// 			required,
-	// 			minLength: minLength(3)
-	// 		},
-	// 		email: {
-	// 			required,
-	// 			email
-	// 		},
-	// 		mobile: {
-	// 			required,
-	// 			maxLength: maxLength(10)
-	// 		},
-	// 		gender: {
-	// 			required
-	// 		},
-	// 		agree: {
-	// 			required
-	// 		}
-	// 	}
-	// },
 	watch: {
 		active: {
 			handler(val) {
@@ -219,22 +221,17 @@ export default {
 			},
 			deep: true
 		}
-		// showSignup(val) {
-		// 	if (!val) {
-		// 		this.$emit("update:active", {activeLogin:false,activeSignup:false});
-		// 	}
-		// }
 	},
 	methods: {
 		validateForm() {
-			this.$v.$touch();
-
-			//function of mixin to render an error
-			this.renderError();
-
-			if (!this.$v.$invalid) {
-				this.saveUser();
-			}
+			this.$refs[this.formName].validate(valid => {
+				if (valid) {
+					alert("submit!");
+				} else {
+					console.log("error submit!!");
+					return false;
+				}
+			});
 		},
 		loginFormHandle() {
 			this.showSignup = false;
