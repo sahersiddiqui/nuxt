@@ -10,44 +10,36 @@
 				height="240px"
 			>
 				<el-carousel-item>
-					<figure>
+					
 						<img
 							src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
 							alt="GuruShala"
 						/>
-					</figure>
 				</el-carousel-item>
 				<el-carousel-item>
-					<figure>
+					
 						<img
-							width="100"
 							src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
 							alt="GuruShala"
 						/>
-					</figure>
 				</el-carousel-item>
 				<el-carousel-item>
-					<figure>
+					
 						<img
-							width="100%"
 							src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
 							alt="GuruShala"
 						/>
-					</figure>
 				</el-carousel-item>
 				<el-carousel-item>
-					<figure>
+					
 						<img
-							width="100%"
 							src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
 							alt="GuruShala"
 						/>
-					</figure>
 				</el-carousel-item>
 				<el-carousel-item>
 					<figure>
 						<img
-							width="100%"
 							src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
 							alt="GuruShala"
 						/>
@@ -260,6 +252,8 @@ export default {
 </script>
 <style  scoped>
 img{
-	width: 100%
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 </style>
