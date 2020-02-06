@@ -135,22 +135,22 @@
 </template>
 
 <script>
-import { validationMixin } from "vuelidate";
+// import { validationMixin } from "vuelidate";
 import { validationErrorMixin } from "@/mixins/validatorMixin";
 
-import {
-	required,
-	email,
-	minLength,
-	maxLength
-} from "vuelidate/lib/validators";
+// import {
+// 	required,
+// 	email,
+// 	minLength,
+// 	maxLength
+// } from "vuelidate/lib/validators";
 
 import axios from "axios";
 import store from "vuex";
 
 export default {
 	name: "FormValidation",
-	mixins: [validationMixin, validationErrorMixin],
+	mixins: [ validationErrorMixin],
 	data: () => ({
 		form: {
 			firstName: null,
@@ -164,30 +164,30 @@ export default {
 		sending: false,
 		lastUser: null
 	}),
-	validations: {
-		form: {
-			firstName: {
-				required,
-				minLength: minLength(3)
-			},
-			lastName: {
-				required,
-				minLength: minLength(3)
-			},
-			age: {
-				required,
-				maxLength: maxLength(3)
-			},
-			gender: {
-				required
-			},
-			email: {
-				required,
-				email
-			}
-		},
-		errors: {}
-	},
+	// validations: {
+	// 	form: {
+	// 		firstName: {
+	// 			required,
+	// 			minLength: minLength(3)
+	// 		},
+	// 		lastName: {
+	// 			required,
+	// 			minLength: minLength(3)
+	// 		},
+	// 		age: {
+	// 			required,
+	// 			maxLength: maxLength(3)
+	// 		},
+	// 		gender: {
+	// 			required
+	// 		},
+	// 		email: {
+	// 			required,
+	// 			email
+	// 		}
+	// 	},
+	// 	errors: {}
+	// },
 
 	methods: {
 		getValidationClass(fieldName) {

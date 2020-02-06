@@ -1,9 +1,9 @@
 <template>
 	<el-row>
-		<el-col>
+		<el-col :span=24>
 			<el-carousel
 				height="240px"
-				:autoplay="true"
+				:autoplay="false"
 				:loop="true"
 				arrow="never"
 				:interval="2000"
@@ -43,7 +43,7 @@
 		</el-col>
 		<el-col>
 			<el-row>
-				<el-col :span="8">
+				<el-col :xs="24" :sm="6" :md="6" :lg="6" :xl="6">
 					<div class="offer_option ">
 						<ul>
 							<nuxt-link title="Leaderboard" to="/leaderboard">
@@ -68,14 +68,14 @@
 						</ul>
 					</div>
 				</el-col>
-				<el-col :span="16">
+				<el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
 					<div class="courses_card_col">
 						<h2 class="section_title text-left">
 							Gurushala Offers
 						</h2>
-						<div class="in">
+						<div class="">
 							<el-row>
-								<el-col :span="12">
+								<el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
 									<div class="offer_card">
 										<nuxt-link to="/course">
 											<div class="inner_wrap">
@@ -102,7 +102,7 @@
 										</nuxt-link>
 									</div>
 								</el-col>
-								<el-col :span="12">
+								<el-col  :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
 									<div class="offer_card">
 										<nuxt-link to="/content">
 											<div class="inner_wrap">
@@ -130,7 +130,7 @@
 								</el-col>
 							</el-row>
 							<el-row>
-								<el-col :span="12">
+								<el-col  :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
 									<div class="offer_card">
 										<nuxt-link to="/ed-tech">
 											<div class="inner_wrap">
@@ -157,7 +157,7 @@
 										</nuxt-link>
 									</div>
 								</el-col>
-								<el-col :span="12">
+								<el-col  :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
 									<div class="offer_card">
 										<nuxt-link to="/networking">
 											<div class="inner_wrap">

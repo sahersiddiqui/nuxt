@@ -35,7 +35,7 @@ module.exports = {
     // '@/plugins/material-ui.js',
     '@/plugins/element.js',
     '@/plugins/font-awesome.js',
-    '@/plugins/vue-carousel.js',
+    // '@/plugins/vue-carousel.js',
     '@/plugins/lodash.js',
   ],
   /*

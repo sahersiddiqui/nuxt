@@ -158,15 +158,15 @@
 	</div>
 </template>
 <script>
-import { validationMixin } from "vuelidate";
+// import { validationMixin } from "vuelidate";
 import { validationErrorMixin } from "@/mixins/validatorMixin";
 
-import {
-	required,
-	email,
-	minLength,
-	maxLength
-} from "vuelidate/lib/validators";
+// import {
+// 	required,
+// 	email,
+// 	minLength,
+// 	maxLength
+// } from "vuelidate/lib/validators";
 
 export default {
 	name: "signup",
@@ -174,7 +174,7 @@ export default {
 	props: {
 		active: Object
 	},
-	mixins: [validationMixin, validationErrorMixin],
+	mixins: [ validationErrorMixin],
 	data() {
 		return {
 			form: {
@@ -188,28 +188,28 @@ export default {
 			errors: {}
 		};
 	},
-	validations: {
-		form: {
-			name: {
-				required,
-				minLength: minLength(3)
-			},
-			email: {
-				required,
-				email
-			},
-			mobile: {
-				required,
-				maxLength: maxLength(10)
-			},
-			gender: {
-				required
-			},
-			agree: {
-				required
-			}
-		}
-	},
+	// validations: {
+	// 	form: {
+	// 		name: {
+	// 			required,
+	// 			minLength: minLength(3)
+	// 		},
+	// 		email: {
+	// 			required,
+	// 			email
+	// 		},
+	// 		mobile: {
+	// 			required,
+	// 			maxLength: maxLength(10)
+	// 		},
+	// 		gender: {
+	// 			required
+	// 		},
+	// 		agree: {
+	// 			required
+	// 		}
+	// 	}
+	// },
 	watch: {
 		active: {
 			handler(val) {
