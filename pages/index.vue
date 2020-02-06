@@ -1,43 +1,57 @@
 <template>
 	<el-row>
-		<el-col :span=24>
+		<el-col :span="24">
 			<el-carousel
-				height="240px"
 				:autoplay="false"
 				:loop="true"
 				arrow="never"
 				:interval="2000"
 				indicator-position="none"
+				height="240px"
 			>
 				<el-carousel-item>
-					<img
-						src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
-						alt="GuruShala"
-					/>
+					<figure>
+						<img
+							src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
+							alt="GuruShala"
+						/>
+					</figure>
 				</el-carousel-item>
 				<el-carousel-item>
-					<img
-						src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
-						alt="GuruShala"
-					/>
+					<figure>
+						<img
+							width="100"
+							src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
+							alt="GuruShala"
+						/>
+					</figure>
 				</el-carousel-item>
 				<el-carousel-item>
-					<img
-						src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
-						alt="GuruShala"
-					/>
+					<figure>
+						<img
+							width="100%"
+							src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
+							alt="GuruShala"
+						/>
+					</figure>
 				</el-carousel-item>
 				<el-carousel-item>
-					<img
-						src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
-						alt="GuruShala"
-					/>
+					<figure>
+						<img
+							width="100%"
+							src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
+							alt="GuruShala"
+						/>
+					</figure>
 				</el-carousel-item>
 				<el-carousel-item>
-					<img
-						src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
-						alt="GuruShala"
-					/>
+					<figure>
+						<img
+							width="100%"
+							src="https://appinventiv-development.s3.amazonaws.com/gurushala/pages/0.83658610920712760.6115305480709687Slide3.JPG"
+							alt="GuruShala"
+						/>
+					</figure>
 				</el-carousel-item>
 			</el-carousel>
 		</el-col>
@@ -75,7 +89,13 @@
 						</h2>
 						<div class="">
 							<el-row>
-								<el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+								<el-col
+									:xs="24"
+									:sm="24"
+									:md="12"
+									:lg="12"
+									:xl="12"
+								>
 									<div class="offer_card">
 										<nuxt-link to="/course">
 											<div class="inner_wrap">
@@ -102,7 +122,13 @@
 										</nuxt-link>
 									</div>
 								</el-col>
-								<el-col  :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+								<el-col
+									:xs="24"
+									:sm="24"
+									:md="12"
+									:lg="12"
+									:xl="12"
+								>
 									<div class="offer_card">
 										<nuxt-link to="/content">
 											<div class="inner_wrap">
@@ -130,7 +156,13 @@
 								</el-col>
 							</el-row>
 							<el-row>
-								<el-col  :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+								<el-col
+									:xs="24"
+									:sm="24"
+									:md="12"
+									:lg="12"
+									:xl="12"
+								>
 									<div class="offer_card">
 										<nuxt-link to="/ed-tech">
 											<div class="inner_wrap">
@@ -157,7 +189,13 @@
 										</nuxt-link>
 									</div>
 								</el-col>
-								<el-col  :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+								<el-col
+									:xs="24"
+									:sm="24"
+									:md="12"
+									:lg="12"
+									:xl="12"
+								>
 									<div class="offer_card">
 										<nuxt-link to="/networking">
 											<div class="inner_wrap">
@@ -220,3 +258,8 @@ export default {
 	}
 };
 </script>
+<style  scoped>
+img{
+	width: 100%
+}
+</style>

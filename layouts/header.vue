@@ -1,7 +1,7 @@
 <template>
 	<header>
 		<el-row>
-			<el-col :span="4">
+			<el-col  :xs="12" :sm="8" :md="6" :lg="4" :xl="4">
 				<div class="brand_wrap">
 					<figure class="logo">
 						<nuxt-link to="/">
@@ -10,7 +10,7 @@
 					</figure>
 				</div>
 			</el-col>
-			<el-col :span="9">
+			<el-col :xs="12" :sm="16" :md="4" :lg="10" :xl="10">
 				<el-menu class="el-menu-demo" mode="horizontal"   >
 					<el-submenu index="2">
 						<template slot="title">Explore</template>
@@ -28,7 +28,7 @@
 					</el-submenu>
 				</el-menu>
 			</el-col>
-			<el-col :span="10">
+			<el-col :xs="24" :sm="24" :md="14" :lg="10" :xl="10">
 				<div class="">
 					<el-menu class="el-menu-demo" mode="horizontal">
 						<el-submenu index="2">

@@ -81,22 +81,22 @@
 		<!--Footer Nav Option Close-->
 		<!--Brand Partner-->
 		<el-row>
-			<el-col :span="6">
+			<el-col :xs="12" :sm="12" :md="6" :lg="6" :xl="6">
 				<figure class="footer-logo">
 					<img src="/images/foot-logo.png" alt="gurushala" />
 				</figure>
 			</el-col>
-			<el-col :span="6">
+			<el-col :xs="12" :sm="12" :md="6" :lg="6" :xl="6">
 				<figure class="footer-logo">
 					<img src="/images/pratham-logo.png" alt="pratham" />
 				</figure>
 			</el-col>
-			<el-col :span="6">
+			<el-col :xs="12" :sm="12" :md="6" :lg="6" :xl="6">
 				<figure class="footer-logo">
 					<img src="/images/vodafone-logo.png" alt="vodafone" />
 				</figure>
 			</el-col>
-			<el-col :span="6">
+			<el-col :xs="12" :sm="12" :md="6" :lg="6" :xl="6">
 				<figure class="footer-logo">
 					<img src="/images/indus-tower.png" alt="indus-tower" />
 				</figure>
@@ -114,7 +114,7 @@
 						</p>
 					</el-col>
 					<el-col :span="18">
-						<div class="tnc_nav">
+						<div class="tnc_nav ">
 							<nuxt-link to="/page/terms-and-condition">
 								Terms and Conditions
 							</nuxt-link>
