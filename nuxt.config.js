@@ -67,5 +67,8 @@ module.exports = {
     },
     server: {
         port: 3001
+    },
+    env: {
+        baseUrl: process.env.BASE_URL || 'http://localhost:3000/api/'
     }
 }

@@ -93,35 +93,33 @@
 						</el-form-item>
 					</div>
 					<div>
-						<el-checkbox
-							class=" md-size-30"
-							v-model="form.agree"
-							value="1"
-						>
-							I agree to the
-						</el-checkbox>
-						<span class=" terms">
-							<a
-								href="http://localhost:8000/page/terms-and-condition"
-								class="tnc_link "
+						<el-form-item prop="agree">
+							<el-checkbox
+								class=" md-size-30"
+								v-model="form.agree"
+								value="1"
 							>
-								Terms and Conditions
-							</a>
-							<span class=""> and</span>
-							<a
-								href="http://localhost:8000/page/privacy-policy"
-								class="tnc_link "
-							>
-								Privacy Policy
-							</a>
-						</span>
+								<span class=" terms">
+									<span > I agree to the</span>
+									<a
+										href="http://localhost:8000/page/terms-and-condition"
+										class="tnc_link "
+									>
+										Terms and Conditions
+									</a>
+									<span > and</span>
+									<a
+										href="http://localhost:8000/page/privacy-policy"
+										class="tnc_link "
+									>
+										Privacy Policy
+									</a>
+								</span>
+							</el-checkbox>
+						</el-form-item>
 					</div>
 
-					<el-button
-						type="submit"
-						class="md-raised md-primary"
-						@click="validateForm"
-					>
+					<el-button type="primary" @click="validateForm">
 						Sign Up
 					</el-button>
 				</el-form>
@@ -130,15 +128,8 @@
 	</div>
 </template>
 <script>
-// import { validationMixin } from "vuelidate";
-// import { validationErrorMixin } from "@/mixins/validatorMixin";
 
-// import {
-// 	required,
-// 	email,
-// 	minLength,
-// 	maxLength
-// } from "vuelidate/lib/validators";
+import {register} from '@/api/signup.api'
 
 export default {
 	name: "signup",
@@ -165,8 +156,8 @@ export default {
 					},
 					{
 						min: 3,
-						max: 5,
-						message: "Length should be 3 to 5",
+						max: 50,
+						message: "Length should be 3 to 50",
 						trigger: "blur"
 					}
 				],
@@ -188,11 +179,11 @@ export default {
 						message: "Please input mobile number",
 						trigger: "change"
 					},
-					{
-						type: "integer",
-						message: "Please enter valid mobile number",
-						trigger: "change"
-					},
+					// {
+					// 	type: "integer",
+					// 	message: "Please enter valid mobile number",
+					// 	trigger: "change"
+					// },
 					{
 						min: 8,
 						max: 10,
@@ -204,6 +195,13 @@ export default {
 					{
 						required: true,
 						message: "Please select gender",
+						trigger: "change"
+					}
+				],
+				agree: [
+					{
+						required: true,
+						message: "Please accept terms and condition",
 						trigger: "change"
 					}
 				]
@@ -226,9 +224,14 @@ export default {
 		validateForm() {
 			this.$refs[this.formName].validate(valid => {
 				if (valid) {
-					alert("submit!");
+					register(this.form).then(()=>{
+						this.$message({
+							message: 'Congrats, you have been successfully registered.',
+							type: 'success'
+						});
+						this.showSignup = false;
+					})
 				} else {
-					console.log("error submit!!");
 					return false;
 				}
 			});
