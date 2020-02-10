@@ -33,10 +33,8 @@ module.exports = {
      ** Plugins to load before mounting the App
      */
     plugins: [
-        // '@/plugins/material-ui.js',
         '@/plugins/element.js',
         '@/plugins/font-awesome.js',
-        // '@/plugins/vue-carousel.js',
         '@/plugins/lodash.js',
     ],
     /*
@@ -57,7 +55,11 @@ module.exports = {
         /*
          ** You can extend webpack config here
          */
-        extend(config, ctx) {}
+        extend(config, ctx) {
+            config.node = {
+                fs: 'empty'
+            }
+        }
     },
     /**
      * router middleware
@@ -69,6 +71,6 @@ module.exports = {
         port: 3001
     },
     env: {
-        baseUrl: process.env.BASE_URL || 'http://localhost:3000/api/'
+        baseUrl: process.env.BASE_URL || 'http://localhost:3001/api/'
     }
 }

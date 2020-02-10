@@ -128,8 +128,7 @@
 	</div>
 </template>
 <script>
-
-import {register} from '@/api/signup.api'
+import axios from '@/plugins/axios';
 
 export default {
 	name: "signup",
@@ -224,7 +223,7 @@ export default {
 		validateForm() {
 			this.$refs[this.formName].validate(valid => {
 				if (valid) {
-					register(this.form).then(()=>{
+					axios.post('register',this.form).then(()=>{
 						this.$message({
 							message: 'Congrats, you have been successfully registered.',
 							type: 'success'
