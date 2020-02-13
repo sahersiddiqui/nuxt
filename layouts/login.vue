@@ -50,10 +50,11 @@
 				<span class="or">OR</span>
 				<el-form :model="form" :ref="formName" :rules="rules">
 					<el-form-item label="Mobile Number" prop="mobile" :error="serverError.message">
-						<el-input v-model="form.mobile"></el-input>
+						<el-input v-model.number="form.mobile" type="age"></el-input>
 					</el-form-item>
 					<el-form-item label="Password" prop="password" >
 						<el-input
+							type="password"
 							v-model="form.password"
 							autocomplete="off"
 						></el-input>
@@ -110,6 +111,11 @@ export default {
 						required: true,
 						message: "Please input mobile number",
 						trigger: "change"
+					},
+					{
+						type:'number',
+						message: "Mobile number must be valid",
+
 					}
 				],
 				password: [

@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
     mode: 'spa',
     /*
@@ -15,8 +17,7 @@ module.exports = {
         ]
     },
     env: {
-        baseUrl: process.env.BASE_URL || 'http://localhost:3000/api/',
-        jwtKey: "My first nuxt app"
+        baseUrl: process.env.BASE_URL || 'http://localhost:3001/api/',
     },
     /*
      ** Customize the progress-bar color
@@ -45,6 +46,7 @@ module.exports = {
      ** Nuxt.js dev-modules
      */
     buildModules: [
+        '@nuxtjs/dotenv'
         // '@nuxt/typescript-build'
     ],
     /*

@@ -129,6 +129,7 @@
 </template>
 <script>
 import axios from '@/plugins/axios';
+import { Context } from 'express-validator/src/context';
 
 export default {
 	name: "signup",
@@ -223,6 +224,7 @@ export default {
 		validateForm() {
 			this.$refs[this.formName].validate(valid => {
 				if (valid) {
+
 					axios.post('register',this.form).then(()=>{
 						this.$message({
 							message: 'Congrats, you have been successfully registered.',

@@ -27,13 +27,13 @@ router.post('/login', (req, res, next) => {
 });
 router.get('/user', (req, res, next) => {
     const token = req.header('authorization').replace("Bearer ", "");
-    console.log(jwt.verify(token, process.env.jwt_key))
-    User.findOne({ mobile: req.body.mobile, password: req.body.password }, (err, data) => {
+    const user = jwt.verify(token, process.env.jwtKey);
+    User.findOne({ _id: user._id }, (err, data) => {
         if (err) {
             return next(err)
         } else {
             if (!$_.isEmpty(data)) {
-                return res.send({ message: "Login successfully" })
+                return res.send({ message: "Login successfully", data })
             } else {
                 return res.status(422).send({ message: "Invalid credentials" })
             }

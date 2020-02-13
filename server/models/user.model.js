@@ -58,7 +58,6 @@ User.pre('save', async function(next) {
 User.methods.generateAuthToken = async function() {
     // Generate an auth token for the user
     const user = this
-    console.log(process.env.BASE_URL)
     const token = jwt.sign({ _id: user._id }, process.env.jwtKey)
     user.tokens = user.tokens.concat({ token })
     await user.save()
