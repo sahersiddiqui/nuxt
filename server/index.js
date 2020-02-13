@@ -31,11 +31,19 @@ async function start() {
 
     });
 
+    // Build only in dev mode
+    if (config.dev) {
+        const builder = new Builder(nuxt)
+        await builder.build()
+    } else {
+        await nuxt.ready()
+    }
+
     app.use(bodyParser.json()) // for parsing application/json
     app.use(bodyParser.urlencoded({ extended: true }))
 
     //include api routes
-    app.use('/api', require('../api/index'))
+    app.use('/api', require('./api/index'))
 
 
     app.use('/api', function(req, res, next) {
@@ -54,13 +62,7 @@ async function start() {
     });
 
 
-    // Build only in dev mode
-    if (config.dev) {
-        const builder = new Builder(nuxt)
-        await builder.build()
-    } else {
-        await nuxt.ready()
-    }
+
 
     // Give nuxt middleware to express
     app.use(nuxt.render)

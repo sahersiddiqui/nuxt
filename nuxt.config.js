@@ -14,6 +14,10 @@ module.exports = {
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ]
     },
+    env: {
+        baseUrl: process.env.BASE_URL || 'http://localhost:3000/api/',
+        jwtKey: "My first nuxt app"
+    },
     /*
      ** Customize the progress-bar color
      */
@@ -56,7 +60,7 @@ module.exports = {
                 endpoints: {
                     login: { url: '/api/login', method: 'post', propertyName: 'token' },
                     logout: { url: '/api/auth/logout', method: 'post' },
-                    user: { url: '/api/auth/user', method: 'get', propertyName: 'user' }
+                    user: { url: '/api/user', method: 'get', propertyName: 'user' }
                 },
                 // tokenRequired: true,
                 // tokenType: 'bearer'
@@ -76,8 +80,11 @@ module.exports = {
                 fs: 'empty'
             }
         },
-        watch: ['api']
     },
+    serverMiddleware: [
+        // Will register file from project api directory to handle /api/* requires
+        // { path: '/api', handler: '~/server/api/index' },
+    ],
     /**
      * router middleware
      */
@@ -87,7 +94,5 @@ module.exports = {
     server: {
         port: 3001
     },
-    env: {
-        baseUrl: process.env.BASE_URL || 'http://localhost:3001/api/'
-    }
+
 }

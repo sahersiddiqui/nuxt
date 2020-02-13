@@ -2,9 +2,8 @@ const express = require('express')
 const { check, sanitizeBody, body, validationResult } = require('express-validator');
 const router = express.Router();
 
-const User = require("../server/models/user.model")
-
-/* GET users listing. */
+const User = require("../models/user.model")
+    /* GET users listing. */
 router.get('/register', (req, res, next) => {
 
     User.find({}, (err, data) => {
@@ -25,16 +24,25 @@ router.post(
         check('email').isEmail()
 
     ],
-    (req, res, next) => {
+    async(req, res, next) => {
         // Finds the validation errors in this request and wraps them in an object with handy functions
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            return res.status(422).json({ errors: errors.array() });
+            return res.status(422).send({ errors: errors.array() });
         }
+        try {
 
-        User.create(req.body).then((user) => res.json(user)).catch((error) => {
+            req.body.password = 123456;
+            user = new User(req.body);
+            await user.save();
+            const token = await user.generateAuthToken();
+            res.send({ token });
+        } catch (error) {
             next(error)
-        });
+        }
+        // User.create(req.body).then((user) => { res.send(User.generateAuthToken()) }).catch((error) => {
+        // next(error)
+        // });
     }
 );
 

@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-
-
+const bcrypt = require("bcryptjs")
+const jwt = require("jsonwebtoken")
 
 // Define schema
 var Schema = mongoose.Schema;
@@ -20,6 +20,17 @@ var User = new Schema({
         type: Number,
         require: true
     },
+    password: {
+        type: String,
+        required: true,
+        minLength: 7
+    },
+    tokens: [{
+        token: {
+            type: String,
+            required: true
+        }
+    }],
     gender: {
         type: String,
         require: true
@@ -33,6 +44,26 @@ var User = new Schema({
         default: Date.now()
     }
 });
+
+User.pre('save', async function(next) {
+    // Hash the password before saving the user model
+    const user = this
+    if (user.isModified('password')) {
+        user.password = await bcrypt.hash(user.password, 8)
+    }
+    next()
+})
+
+
+User.methods.generateAuthToken = async function() {
+    // Generate an auth token for the user
+    const user = this
+    console.log(process.env.BASE_URL)
+    const token = jwt.sign({ _id: user._id }, process.env.jwtKey)
+    user.tokens = user.tokens.concat({ token })
+    await user.save()
+    return token
+}
 
 
 // Handler **must** take 3 parameters: the error that occurred, the document
