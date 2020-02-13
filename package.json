@@ -5,7 +5,7 @@
     "author": "Saher",
     "private": true,
     "scripts": {
-        "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+        "dev": "cross-env NODE_ENV=development nodemon server/index.js , api/index.js --watch server",
         "build": "nuxt build",
         "start": "cross-env NODE_ENV=production node server/index.js",
         "generate": "nuxt generate"
@@ -16,6 +16,9 @@
         "@fortawesome/free-regular-svg-icons": "^5.12.1",
         "@fortawesome/free-solid-svg-icons": "^5.12.1",
         "@fortawesome/vue-fontawesome": "^0.1.9",
+        "@nuxtjs/auth": "^4.8.5",
+        "@nuxtjs/axios": "^5.9.5",
+        "@nuxtjs/pwa": "^3.0.0-beta.20",
         "axios": "^0.19.2",
         "body-parser": "^1.19.0",
         "cookie-parser": "~1.4.4",

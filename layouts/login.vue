@@ -31,7 +31,6 @@
 									<font-awesome-icon
 										:icon="['fab', 'google']"
 									/>
-									
 								</span>
 								<span class="social_text">Google</span>
 							</a>
@@ -49,11 +48,11 @@
 					</div>
 				</div>
 				<span class="or">OR</span>
-				<el-form :model="form" @submit.prevent="validateUser">
-					<el-form-item label="Mobile Number">
-						<el-input v-model="form.name"></el-input>
+				<el-form :model="form" :ref="formName" :rules="rules">
+					<el-form-item label="Mobile Number" prop="mobile" :error="serverError.message">
+						<el-input v-model="form.mobile"></el-input>
 					</el-form-item>
-					<el-form-item label="Password">
+					<el-form-item label="Password" prop="password" >
 						<el-input
 							v-model="form.password"
 							autocomplete="off"
@@ -78,7 +77,7 @@
 							</el-link>
 						</el-col>
 					</el-row>
-					<el-button type="primary">
+					<el-button type="primary" @click="loginUser">
 						Log In
 					</el-button>
 				</el-form>
@@ -87,6 +86,7 @@
 	</div>
 </template>
 <script>
+import axios from "@/plugins/axios"
 export default {
 	components: {},
 	name: "login",
@@ -95,10 +95,30 @@ export default {
 	},
 	data() {
 		return {
+			formName: "login-form",
 			showLogin: false,
 			form: {
 				mobile: null,
 				password: null
+			},
+			serverError :{
+				message : null
+			},
+			rules: {
+				mobile: [
+					{
+						required: true,
+						message: "Please input mobile number",
+						trigger: "change"
+					}
+				],
+				password: [
+					{
+						required: true,
+						message: "Please input password",
+						trigger: "change"
+					}
+				]
 			}
 		};
 	},
@@ -114,6 +134,30 @@ export default {
 			this.$emit("update:active", {
 				activeLogin: false,
 				activeSignup: false
+			});
+		},
+		loginUser() {
+			this.$refs[this.formName].validate(valid => {
+				if (valid) {
+					// axios.post("register", this.form).then(() => {
+					// 	this.$message({
+					// 		message:
+					// 			"Congrats, you have been successfully registered.",
+					// 		type: "success"
+					// 	});
+					// 	this.showSignup = false;
+					// });
+					this.$auth.loginWith("local", {
+						data: {
+							mobile: this.form.mobile,
+							password: this.form.password
+						}
+					}).catch((error) => {
+						this.serverError.message = error.response.data.message
+					});
+				} else {
+					return false;
+				}
 			});
 		}
 	},

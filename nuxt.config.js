@@ -46,7 +46,23 @@ module.exports = {
     /*
      ** Nuxt.js modules
      */
-    modules: [],
+    modules: [
+        '@nuxtjs/axios',
+        '@nuxtjs/auth'
+    ],
+    auth: {
+        strategies: {
+            local: {
+                endpoints: {
+                    login: { url: '/api/login', method: 'post', propertyName: 'token' },
+                    logout: { url: '/api/auth/logout', method: 'post' },
+                    user: { url: '/api/auth/user', method: 'get', propertyName: 'user' }
+                },
+                // tokenRequired: true,
+                // tokenType: 'bearer'
+            }
+        }
+    },
     /*
      ** Build configuration
      */
@@ -59,7 +75,8 @@ module.exports = {
             config.node = {
                 fs: 'empty'
             }
-        }
+        },
+        watch: ['api']
     },
     /**
      * router middleware
