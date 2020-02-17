@@ -158,6 +158,9 @@ export default {
 							mobile: this.form.mobile,
 							password: this.form.password
 						}
+					}).then((response) => {
+						this.$message("Login successfully")
+						this.updateModal();
 					}).catch((error) => {
 						this.serverError.message = error.response.data.message
 					});

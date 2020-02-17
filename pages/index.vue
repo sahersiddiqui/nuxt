@@ -2,7 +2,7 @@
 	<el-row>
 		<el-col :span="24">
 			<el-carousel
-				:autoplay="false"
+				:autoplay="true"
 				:loop="true"
 				arrow="never"
 				:interval="2000"
