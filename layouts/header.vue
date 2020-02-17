@@ -55,7 +55,7 @@
 							}}</template>
 							<el-menu-item index="4-1">My Profile</el-menu-item>
 							<el-menu-item index="4-2">Settings</el-menu-item>
-							<el-menu-item index="4-2">Logout</el-menu-item>
+							<el-menu-item index="4-2" @click="logOutUser">Logout</el-menu-item>
 						</el-submenu>
 						<el-menu-item
 						v-else
@@ -105,6 +105,13 @@ export default {
 		updateModalVisible() {
 			this.modalVisible.activeLogin = false;
 			this.modalVisible.activeSignup = false;
+		},
+		logOutUser(){
+			this.$auth.logout().then(response => {
+				this.$message("Logout successfully")
+			}).catch((error) => {
+				this.$message( error)
+			});
 		}
 	}
 };

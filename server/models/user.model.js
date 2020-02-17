@@ -28,7 +28,6 @@ var User = new Schema({
     tokens: [{
         token: {
             type: String,
-            required: true
         }
     }],
     gender: {
@@ -62,6 +61,14 @@ User.methods.generateAuthToken = async function() {
     user.tokens = user.tokens.concat({ token })
     await user.save()
     return token
+}
+
+User.methods.destroyAuthToken = async function() {
+    // Generate an auth token for the user
+    const user = this
+    user.tokens = []
+    await user.save()
+    return user
 }
 
 

@@ -159,8 +159,8 @@ export default {
 							password: this.form.password
 						}
 					}).then((response) => {
+						this.showLogin=false;
 						this.$message("Login successfully")
-						this.updateModal();
 					}).catch((error) => {
 						this.serverError.message = error.response.data.message
 					});

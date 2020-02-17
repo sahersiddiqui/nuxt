@@ -40,6 +40,22 @@ router.get('/user', (req, res, next) => {
         }
     })
 });
+router.post('/logout', (req, res, next) => {
+    const token = req.header('authorization').replace("Bearer ", "");
+    const user = jwt.verify(token, process.env.jwtKey);
+    User.findOne({ _id: user._id }, async(err, data) => {
+        if (err) {
+            return next(err)
+        } else {
+            if (!$_.isEmpty(data)) {
+                await data.destroyAuthToken();
+                return res.send({ message: "Logout successfully" })
+            } else {
+                return res.status(422).send({ message: "Unable to logout" })
+            }
+        }
+    })
+});
 
 module.exports = router
 
