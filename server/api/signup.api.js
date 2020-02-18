@@ -3,17 +3,6 @@ const { check, sanitizeBody, body, validationResult } = require('express-validat
 const router = express.Router();
 
 const User = require("../models/user.model")
-    /* GET users listing. */
-router.get('/register', (req, res, next) => {
-
-    User.find({}, (err, data) => {
-        if (err) {
-            return next(err)
-        } else {
-            return res.send(data)
-        }
-    })
-});
 
 //create user
 router.post(
@@ -31,7 +20,6 @@ router.post(
             return res.status(422).send({ errors: errors.array() });
         }
         try {
-
             req.body.password = 123456;
             user = new User(req.body);
             await user.save();
@@ -46,25 +34,4 @@ router.post(
     }
 );
 
-/**
- * Get Single user detail
- */
-router.get(
-    'user/:id',
-    (req, res, next) => {
-        User.find({ _id: req.params.id }).then((user) => res.send(user));
-    }
-);
-/**
- * Update  user detail
- */
-router.put(
-    'user/:id',
-    (req, res, next) => {
-        User.find({ _id: req.params.id }).update(req.body).then((user) => res.send(user));
-    }
-);
-
 module.exports = router
-
-// export default router

@@ -1,23 +1,23 @@
 <template>
 	<el-main>
-					<el-table :data="tableData">
-						<el-table-column prop="date" label="Date" width="140">
-						</el-table-column>
-						<el-table-column prop="name" label="Name" width="120">
-						</el-table-column>
-						<el-table-column prop="address" label="Address">
-						</el-table-column>
-					</el-table>
-				</el-main>
+		<el-table :data="tableData">
+			<el-table-column prop="date" label="Date" width="140">
+			</el-table-column>
+			<el-table-column prop="name" label="Name" width="120">
+			</el-table-column>
+			<el-table-column prop="address" label="Address"> </el-table-column>
+		</el-table>
+	</el-main>
 </template>
 
 <script>
 export default {
-    layout : "admin/default",
+	layout: "admin/default",
 	components: {},
 	data() {
 		return {
-			title: "Home"
+			title: "Home",
+			tableData: []
 		};
 	},
 	head() {
@@ -39,8 +39,8 @@ export default {
 	}
 };
 </script>
-<style  scoped>
-img{
+<style scoped>
+img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
