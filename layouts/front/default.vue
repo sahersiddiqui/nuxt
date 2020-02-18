@@ -1,7 +1,6 @@
 <template>
 	<div>
 		<header-component />
-		
 		<section class=" offer_section">
 			<nuxt />
 		</section>

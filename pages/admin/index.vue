@@ -225,7 +225,7 @@
 
 <script>
 export default {
-	layout : "front/default",
+    layout : "admin/default",
 	components: {},
 	data() {
 		return {
