@@ -29,7 +29,7 @@
 						<el-button @click="createUser('form')">
 							Create
 						</el-button>
-						<el-button @click="resetForm('form')">Cancel</el-button>
+						<el-button @click="$router.push('/admin/user')">Cancel</el-button>
 					</el-form-item>
 				</el-form>
 			</el-col>
